@@ -52,10 +52,6 @@ body::before {
 .btn {
     @apply shadow-md rounded-md text-txt-white focus:outline-none;
 
-    &.btn_lg {
-        @apply py-5 px-10;
-    }
-
     &.btn_green {
         @apply bg-green-400 shadow-green;
     }
@@ -63,28 +59,30 @@ body::before {
     &.btn_blue {
         @apply bg-lightBlue-400 shadow-blue;
     }
+    
+    &.btn_rose {
+        @apply bg-rose-400 shadow-rose transition-colors hover:bg-rose-500;
+    }
+
+    &.btn_yellow {
+        @apply bg-yellow-400 shadow-yellow;
+    }
 
     &.caption {
         @apply uppercase text-sm font-bold;
+        font-family: 'Nunito', sans-serif;
         letter-spacing: 0.25rem;
+    }
+
+    &.btn_sm {
+        @apply py-2.5 px-9 ;
+    }
+
+    &.btn_lg {
+        @apply py-5 px-10;
     }
 }
 
-.blue {
-    background: #38bdf8;
-}
-
-.sm {
-    width: 200px;
-    height: 46px;
-}
-
-.butt {
-    color: #fafaf9;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0px 0px 20px #4ade80;
-}
 
 /* HEADER */
 
