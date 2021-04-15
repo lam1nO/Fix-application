@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Nunito', sans-serif;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Nunito", sans-serif;
         @apply font-bold;
     }
 
@@ -21,6 +26,47 @@
     }
 
     * {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
     }
+}
+
+.green {
+    background: #4ade80;
+}
+
+.btn {
+    @apply shadow-md rounded-md text-txt-white focus:outline-none;
+
+    &.btn_lg {
+        @apply py-5 px-10;
+    }
+
+    &.btn_green {
+        @apply bg-green-400 shadow-green;
+    }
+
+    &.btn_blue {
+        @apply bg-lightBlue-400 shadow-blue;
+    }
+
+    &.caption {
+        @apply uppercase text-sm font-bold;
+        letter-spacing: 0.25rem;
+    }
+}
+
+.blue {
+    background: #38bdf8;
+}
+
+.sm {
+    width: 200px;
+    height: 46px;
+}
+
+.butt {
+    color: #fafaf9;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 20px #4ade80;
 }

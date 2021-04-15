@@ -10,6 +10,7 @@ module.exports = {
       lightBlue: colors.lightBlue,
       gray: colors.blueGray,
       green: colors.green,
+      blue: colors.blue,
       txt: {
         black: "#44403C",
         white: "#FAFAF9"
@@ -17,7 +18,12 @@ module.exports = {
       rose: colors.rose,
 
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        'green': '0 0px 20px 0 #4ADE80',
+        'blue': '0 0px 20px 0 #7DD3FC',
+      }
+    },
   },
   variants: {
     extend: {
