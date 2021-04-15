@@ -26,7 +26,8 @@ module.exports = {
         'green': '0 0px 20px 0 #4ADE80',
         'blue': '0 0px 20px 0 #7DD3FC',
         'rose': '0 0 20px 0 #FB7185',
-        'yellow': '0 0 20px 0 #FBBF24'
+        'yellow': '0 0 20px 0 #FBBF24',
+        'dark': '0 0 20px 0 #000000'
       }
     },
   },

@@ -47,16 +47,18 @@ body::before {
 
 /* BUTTON */
 .btn {
-    @apply shadow-md rounded-lg text-txt-white focus:outline-none;
-
+    @apply shadow-md text-txt-white focus:outline-none;
+    border-radius: 10px;
     &.btn_green {
         @apply bg-green-400 shadow-green;
     }
 
     &.btn_blue {
-        @apply bg-lightBlue-400 shadow-blue;
+        @apply bg-lightBlue-400;
     }
-    
+    &.btn_lightblue {
+        @apply bg-lightBlue-300
+    }
     &.btn_rose {
         @apply bg-rose-400 shadow-rose transition-colors hover:bg-rose-500;
     }
@@ -64,9 +66,8 @@ body::before {
     &.btn_yellow {
         @apply bg-yellow-400 shadow-yellow;
     }
-    &.btn_lightblue {
-        @apply bg-lightBlue-300
-    }
+    
+    &.btn_
 
     &.caption {
         @apply uppercase text-sm font-bold;
@@ -75,7 +76,7 @@ body::before {
     }
 
     &.btn_sm {
-        @apply py-2.5 px-9 ;
+        @apply py-2.5 px-9;
     }
 
     &.btn_lg {
@@ -90,9 +91,6 @@ body::before {
 
 /* END BUTTON */
 
-.desc {
-    @apply text-sm text-gray-400;
-}
 
 /* HEADER */
 

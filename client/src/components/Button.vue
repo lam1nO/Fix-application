@@ -14,6 +14,11 @@ export default {
             default: true,
         },
         size: String //sm, lg
+    },
+    methods: {
+        func() {
+            console.log(this.color)
+        }
     }
 }
 </script>
