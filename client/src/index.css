@@ -45,12 +45,9 @@ body::before {
     @apply backdrop-filter backdrop-blur-3xl;
 }
 
-.green {
-    background: #4ade80;
-}
-
+/* BUTTON */
 .btn {
-    @apply shadow-md rounded-md text-txt-white focus:outline-none;
+    @apply shadow-md rounded-lg text-txt-white focus:outline-none;
 
     &.btn_green {
         @apply bg-green-400 shadow-green;
@@ -83,6 +80,11 @@ body::before {
     }
 }
 
+/* END BUTTON */
+
+.desc {
+    @apply text-sm text-gray-400;
+}
 
 /* HEADER */
 
