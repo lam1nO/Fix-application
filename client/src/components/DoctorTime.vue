@@ -1,20 +1,22 @@
 <template>
-  <div class="bg-txt-white inline-flex rounded-md p-2.5">
-    <div class="doctor flex flex-col items-start mr-4">
-      <p class="name ml-3 text-2xl font-semibold text-gray-600">{{ name }}</p>
-      <div class="desc-container ml-3 flex">
+  <div class="bg-txt-white inline-flex rounded-lg p-2.5">
+    <div class="doctor flex flex-col ml-3 items-start mr-4">
+      <p class="name text-2xl font-semibold text-gray-600">{{ name }}</p>
+      <div class="desc-container flex mt-1 mb-4">
         <div class="desc" v-for="item in filter()" :key="item">
           {{ item }}, &zwnj;
         </div>
         <div class="desc">{{ last_item }}</div>
       </div>
-      <!-- avatar -->
+    <Button :color="'btn_lightblue'" :caption="false" :size="'btn_md'">Расписание</Button>
     </div>
-    <div class="w-14 h-14 mr-3 ml-3 rounded-full bg-gray-200"></div>
+     <!-- avatar -->
+    <div class="w-14 h-14 mr-1 ml-3 rounded-full bg-gray-200"></div>
   </div>
 </template>
 
 <script>
+import Button from '@/components/Button.vue'
 export default {
   name: "DoctorTime",
   data() {
@@ -41,7 +43,7 @@ export default {
       return arr;
     },
   },
-  components: {},
+  components: {Button},
 };
 </script>
 

@@ -64,6 +64,9 @@ body::before {
     &.btn_yellow {
         @apply bg-yellow-400 shadow-yellow;
     }
+    &.btn_lightblue {
+        @apply bg-lightBlue-300
+    }
 
     &.caption {
         @apply uppercase text-sm font-bold;
@@ -77,6 +80,11 @@ body::before {
 
     &.btn_lg {
         @apply py-5 px-10;
+    }
+
+    &.btn_md {
+        @apply py-2 px-5 rounded-md text-sm font-semibold;
+        color: #0EA5E9;
     }
 }
 
