@@ -1,11 +1,16 @@
 <template>
-  <div id="nav">
-  <Header>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  
+  <Header class="">
+    <div id="nav" class="flex">
+      <router-link to="/">Home</router-link> 
+      <router-link to="/about">About</router-link>
+    </div>
   </Header>
-  </div>
-  <router-view />
+  
+  <content class="w-full flex-auto"> 
+    <router-view />
+  </content>
+  
 </template>
 
 <script>
@@ -20,6 +25,7 @@ export default {
 </script>
 
 <style>
+
 #app {
   text-align: center;
   color: #2c3e50;

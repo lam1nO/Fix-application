@@ -14,10 +14,14 @@ module.exports = {
         black: "#44403C",
         white: "#FAFAF9"
       },
+      blur: {
+        40: "rgba(244, 244, 244, 0.4)",
+      },
       rose: colors.rose,
 
     },
-    extend: {},
+    extend: {
+    },
   },
   variants: {
     extend: {
