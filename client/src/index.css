@@ -40,12 +40,9 @@ body::before {
     @apply backdrop-filter backdrop-blur-3xl;
 }
 
-.green {
-    background: #4ade80;
-}
-
+/* BUTTON */
 .btn {
-    @apply shadow-md rounded-md text-txt-white focus:outline-none;
+    @apply shadow-md rounded-lg text-txt-white focus:outline-none;
 
     &.btn_lg {
         @apply py-5 px-10;
@@ -64,19 +61,9 @@ body::before {
         letter-spacing: 0.25rem;
     }
 }
+/* END BUTTON */
 
-.blue {
-    background: #38bdf8;
-}
-
-.sm {
-    width: 200px;
-    height: 46px;
-}
-
-.butt {
-    color: #fafaf9;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0px 0px 20px #4ade80;
+/* DoctorTime */
+.desc{
+    @apply text-sm text-gray-400
 }
