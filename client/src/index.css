@@ -112,3 +112,11 @@ header {
         }
     }
 }
+
+/* STEP */
+.step{
+    width: 200px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(50px);
+}

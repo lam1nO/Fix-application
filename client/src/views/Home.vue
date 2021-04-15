@@ -1,21 +1,16 @@
 <template>
   <div class="home">
-    <DoctorTime :name="'Гусманов Нияз'" :desc="['Узист', 'Кардиолог']"/>
-    <br>
-    <br>
-    <DoctorCard :name="'Гусманов Нияз'" :desc="['Узист', 'Кардиолог']"/>
-
+    <Step :title="'Услуга'" :num="1" :desc="'Запишитесь в ближайшую к вас клинику'"></Step>
   </div>
 </template>
 
 <script>
+import Step from '@/components/Step.vue'
 // @ is an alias to /src
-import DoctorTime from "@/components/DoctorTime.vue"
-import DoctorCard from "@/components/DoctorCard.vue"
 export default {
   name: "Home",
   components: {
-    DoctorTime, DoctorCard
+    Step
   },
 };
 </script>
