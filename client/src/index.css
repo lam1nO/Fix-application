@@ -27,7 +27,12 @@
 
     * {
         font-family: "Montserrat", sans-serif;
+        @apply text-gray-600;
     }
+}
+
+.main_container {
+    @apply container w-full mx-auto;
 }
 
 body {
@@ -63,7 +68,26 @@ body::before {
 }
 /* END BUTTON */
 
-/* DoctorTime */
-.desc{
-    @apply text-sm text-gray-400
+.desc {
+    @apply text-sm text-gray-400;
+
+/* HEADER */
+
+header {
+
+    .logo {
+
+    }
+
+    #nav a {
+        @apply mr-6 text-lg font-bold text-gray-400;
+
+        &.router-link-active {
+            @apply text-gray-700;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
 }
