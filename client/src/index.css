@@ -66,11 +66,10 @@ body::before {
     &.btn_yellow {
         @apply bg-yellow-400 shadow-yellow;
     }
-    
-    &.btn_
 
     &.caption {
         @apply uppercase text-sm font-bold;
+
         font-family: 'Nunito', sans-serif;
         letter-spacing: 0.25rem;
     }
@@ -119,4 +118,19 @@ header {
     height: 150px;
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(50px);
+}
+
+/* SERVICE CARD */
+.addservice{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 8.4px;
+    line-height: 11px;
+    letter-spacing: 0.25em;
+    @apply font-bold uppercase py-3
+}
+.servicecard{
+    background: #fefefe 0.8;
+    width: 190px;
+    height: 140px;
 }

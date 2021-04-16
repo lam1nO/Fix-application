@@ -1,5 +1,5 @@
 <template>
-    <button  @click="func()" v-bind:class="[color, size, caption ? 'caption' : '' ,  ]" class="btn">
+    <button  @click="func()" v-bind:class="[color, size, 'caption' ? caption : '']" class="btn">
         <slot></slot>
     </button>
 </template>

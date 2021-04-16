@@ -1,16 +1,16 @@
 <template>
-  <div class="home">
-    <Step :title="'Услуга'" :num="1" :desc="'Запишитесь в ближайшую к вас клинику'"></Step>
+  <div class="home flex justify-center">
+    <ServiceCard :title="'Допплероаграфия плода'" :price="800" :time="'1 день'"/>
   </div>
 </template>
 
 <script>
-import Step from '@/components/Step.vue'
+import ServiceCard from '@/components/ServiceCard.vue'
 // @ is an alias to /src
 export default {
   name: "Home",
   components: {
-    Step
+    ServiceCard
   },
 };
 </script>
