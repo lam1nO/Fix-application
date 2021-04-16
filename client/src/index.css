@@ -69,7 +69,6 @@ body::before {
 
     &.caption {
         @apply uppercase text-sm font-bold;
-
         font-family: 'Nunito', sans-serif;
         letter-spacing: 0.25rem;
     }

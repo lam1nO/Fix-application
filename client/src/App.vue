@@ -2,8 +2,10 @@
   
   <Header class="">
     <div id="nav" class="flex">
-      <router-link to="/">Home</router-link> 
-      <router-link to="/about">About</router-link>
+      <router-link to="/">О сервисе</router-link> 
+      <router-link to="/doctors">Доктора</router-link> 
+      <router-link to="/services">Услуги</router-link> 
+      <router-link to="/contact">Вопросы</router-link> 
     </div>
   </Header>
   
