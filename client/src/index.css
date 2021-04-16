@@ -68,10 +68,10 @@ body::before {
     
 
     &.btn_blue {
-        @apply bg-lightBlue-400;
+        @apply bg-lightBlue-400 shadow-blue hover:bg-lightBlue-500 transition-colors;
     }
     &.btn_lightblue {
-        @apply bg-lightBlue-300
+        @apply bg-lightBlue-300 shadow-blue;
     }
     &.btn_rose {
         @apply bg-rose-400 shadow-rose transition-colors hover:bg-rose-500;
@@ -162,4 +162,17 @@ header {
     .container {
         max-width: 1020px;
     }
+}
+
+.bg {
+    position: fixed;
+    @apply w-full h-full;
+}
+
+.bg_elements {
+    z-index: -1;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
 }

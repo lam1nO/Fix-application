@@ -1,8 +1,14 @@
 <template>
-  <section id="hero" class="main">
-
+  <section id="hero" class="mt-10 flex items-center main_container relative">
+    
+    <div class="hero_text_container">
+      <p class="caption mb-4 text-blue-400 text-left">пройти обследование - просто</p>
+      <h1 class="font-extrabold leading-none">Записывайтесь <br> просто</h1>
+      <p class="text-lg mt-6">Вам нужно лишь выбрать подходящую услугу, <br> оставить свои контактные данные и получить <br> результаты вашего обследования</p>
+      <Button :size="'btn_lg'" :color="'btn_blue'" :class="'mt-5'">выбрать услугу</Button>
+    </div>
   </section>
-  <section class="howworks w-full">
+  <section class="howworks w-full mt-6 z-10">
     <div class="main_container">
       <h2 class="text-gray-600 text-left">Как это работает?</h2>
       <p class="caption text-blue-400 text-left">Всего 4 простых шага</p>
@@ -15,7 +21,7 @@
     </div>
   </section>
 
-  <section class="doctors-section w-full mt-11">
+  <section class="doctors-section w-full mt-11 z-10">
     <div class="main_container">
       <h2 class="text-gray-600 text-left">Наши доктора</h2>
       <div class="doctorcards-container flex justify-between mt-14">
