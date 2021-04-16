@@ -67,12 +67,6 @@ body::before {
         @apply bg-yellow-400 shadow-yellow;
     }
 
-    &.caption {
-        @apply uppercase text-sm font-bold;
-        font-family: 'Nunito', sans-serif;
-        letter-spacing: 0.25rem;
-    }
-
     &.btn_sm {
         @apply py-2.5 px-9;
     }
@@ -85,6 +79,12 @@ body::before {
         @apply py-2 px-5 rounded-md text-sm font-semibold;
         color: #0EA5E9;
     }
+}
+
+.caption {
+    @apply uppercase text-sm font-bold;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.25rem;
 }
 
 /* END BUTTON */
@@ -133,3 +133,4 @@ header {
     width: 190px;
     height: 140px;
 }
+

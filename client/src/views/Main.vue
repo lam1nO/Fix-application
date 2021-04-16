@@ -1,5 +1,9 @@
 <template>
   <div class="main">
+
+  </div>
+  <div class="howworks">
+    <h2>Как это работает?</h2>
     
   </div>
 </template>
