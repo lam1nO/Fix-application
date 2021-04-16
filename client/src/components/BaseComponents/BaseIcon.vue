@@ -14,6 +14,10 @@ export default {
         add_class: {
             type: String,
             default: ''
+        },
+        desc: {
+            type: String,
+            required: false
         }
     },
     data() {

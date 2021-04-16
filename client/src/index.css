@@ -65,6 +65,7 @@ body::before {
     &.btn_green {
         @apply bg-green-400 shadow-green;
     }
+    
 
     &.btn_blue {
         @apply bg-lightBlue-400;
@@ -88,6 +89,10 @@ body::before {
         @apply py-5 px-10;
     }
 
+    &.btn_xs {
+        @apply px-2.5 py-2;
+    }
+
     &.btn_md {
         @apply py-2 px-5 rounded-md text-sm font-semibold;
         color: #0EA5E9;
@@ -98,6 +103,12 @@ body::before {
     @apply uppercase text-sm font-bold;
     font-family: 'Nunito', sans-serif;
     letter-spacing: 0.25rem;
+}
+
+.text_with_bg {
+    @apply flex justify-center items-center h-6 px-1 rounded-md font-normal text-xl;
+    letter-spacing: normal;
+    min-width: 24px;
 }
 
 /* END BUTTON */

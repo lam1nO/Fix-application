@@ -1,7 +1,7 @@
 <template>
-  <div class="main">
+  <section id="hero" class="main">
 
-  </div>
+  </section>
   <section class="howworks w-full">
     <div class="main_container">
       <h2 class="text-gray-600 text-left">Как это работает?</h2>
