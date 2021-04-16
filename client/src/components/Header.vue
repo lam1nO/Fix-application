@@ -1,5 +1,5 @@
 <template>
-    <header class="w-full pt-10">
+    <header class="w-ful pt-10">
         <div class="main_container items-center flex justify-between">
             <Logo></Logo>
             <slot></slot>

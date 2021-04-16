@@ -134,3 +134,8 @@ header {
     height: 140px;
 }
 
+@media all and (min-width: 1024px) {
+    .container {
+        max-width: 1020px;
+    }
+}
