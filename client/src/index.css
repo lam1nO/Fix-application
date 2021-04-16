@@ -163,3 +163,10 @@ header {
         max-width: 1020px;
     }
 }
+
+/* ADD CARD on page Услуги */
+.addCard{
+    width: 650px;
+    height: 60px;
+    background: #fafafa 50%;
+}
