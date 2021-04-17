@@ -1,6 +1,6 @@
 <template>
 <div class="">
-    <service-add :title="'Узи провозорных органов'" :price="500"></service-add>
+    <service-add :title="'Узи провозорных органов 400'" :price="400"></service-add>
 </div>
 </template>
 

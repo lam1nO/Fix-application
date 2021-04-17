@@ -1,5 +1,5 @@
 <template>
-    <footer class="w-full bg-gray-50 pt-9 pb-6">
+    <footer class="w-full bg-gray-50 pt-9 pb-6 z-10">
         <div class="main_container flex justify-between">
             <div class="info"></div>
             <Contacts></Contacts>

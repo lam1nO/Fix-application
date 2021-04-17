@@ -1,4 +1,12 @@
 <template>
+  <div class="bg z-0">
+    
+  </div>
+  <div class="bg_elements fixed main_container min-h-full h-full z-0">
+    <div class="bg_element_circle1 right-20 top-40 absolute circle">
+      <img :src="require('@/assets/bg_ellipse.svg')" alt="">
+    </div>
+  </div>
   
   <Header class="">
     <div id="nav" class="flex">
@@ -9,7 +17,7 @@
     </div>
   </Header>
   
-  <content class="w-full flex-auto"> 
+  <content class="w-full flex-auto z-10"> 
     <router-view />
   </content>
   
@@ -34,6 +42,11 @@ export default {
 
 #app {
   color: #2c3e50;
+}
+
+.bg {
+  background: rgba(244, 244, 244, 0.4);
+  backdrop-filter: blur(31px);
 }
 
 

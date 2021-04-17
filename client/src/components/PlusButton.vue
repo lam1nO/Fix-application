@@ -1,5 +1,5 @@
 <template>
-    <Button :color="'btn_green'" :caption="false" class="w-9 h-9 flex items-center justify-center" style="border-radius: 50%;">
+    <Button :color="'btn_green'" :caption="false" class="plus_btn w-9 h-9 flex items-center justify-center" style="border-radius: 50%;">
         <p class="text-txt-white text-5xl">+</p>
     </Button>
 </template>
