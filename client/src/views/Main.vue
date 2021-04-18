@@ -7,6 +7,11 @@
       <p class="text-lg mt-6">Вам нужно лишь выбрать подходящую услугу, <br> оставить свои контактные данные и получить <br> результаты вашего обследования</p>
       <Button :size="'btn_lg'" :color="'btn_blue'" :class="'mt-5'">выбрать услугу</Button>
     </div>
+    <div class="hero_decor_container relative flex-auto ml-5">
+      <blur-card :styles="['p-2.5', 'rounded-lg', 'absolute', 'top-4']" :opacity="'50'" :bg="'bg-white'" :blur="'40'"><cat-icon :iconName="'UZI'"></cat-icon></blur-card>
+
+      <blur-card :styles="['p-2.5', 'rounded-lg', 'absolute', 'bottom-4', 'right-10']" :opacity="'50'" :bg="'bg-white'" :blur="'40'"><cat-icon :iconName="'Cardio'"></cat-icon></blur-card>
+    </div>
   </section>
   <section class="howworks w-full mt-6 z-10">
     <div class="main_container">
@@ -39,13 +44,18 @@
 import Step from '@/components/Step.vue';
 import DoctorCard from '@/components/DoctorCard.vue';
 import Button from '@/components/Button.vue';
+import CatIcon from '@/components/BaseComponents/CatIcon.vue';
+import BlurCard from '@/components/BaseComponents/BlurCard.vue';
+
 // @ is an alias to /src
 export default {
   name: "Main",
   components: {
     Step,
     DoctorCard,
-    Button
+    Button,
+    CatIcon,
+    BlurCard
   }
 };
 </script>

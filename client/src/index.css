@@ -58,6 +58,17 @@ body::before {
     @apply backdrop-filter backdrop-blur-3xl;
 }
 
+/* BACKDROP */
+
+.backdrop-40 {
+    backdrop-filter: blur(40px);
+}
+
+.hero_decor_container {
+    height: 570px;
+    @apply flex-auto;
+}
+
 /* BUTTON */
 .btn {
     @apply shadow-md text-txt-white focus:outline-none;
@@ -168,6 +179,10 @@ header {
         max-width: 1020px;
     }
 }
+
+/* CAT ICONS */
+
+
 
 /* ADD CARD on page Услуги */
 .addCard{

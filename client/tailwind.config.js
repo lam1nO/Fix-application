@@ -19,7 +19,7 @@ module.exports = {
         40: "rgba(244, 244, 244, 0.4)",
       },
       rose: colors.rose,
-
+      white: "#ffffff"
     },
     extend: {
       boxShadow: {
