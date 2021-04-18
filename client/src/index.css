@@ -81,6 +81,9 @@ body::before {
     &.btn_blue {
         @apply bg-lightBlue-400 shadow-blue hover:bg-lightBlue-500 transition-colors;
     }
+    &.btn_blue_10{
+        @apply bg-lightBlue-400 shadow-blue_10 hover:bg-lightBlue-500 transition-colors;        
+    }
     &.btn_lightblue {
         @apply bg-lightBlue-300 shadow-blue;
     }

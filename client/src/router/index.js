@@ -3,6 +3,7 @@ import Main from "../views/Main.vue";
 import Doctors from "../views/Doctors.vue";
 import Services from "../views/Services.vue";
 import Contact from "../views/Contact.vue";
+import UZI from "../views/Services/UZI.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/contact",
     name: "Contact",
     component: Contact,
+  },
+  {
+    path: "/services/uzi",
+    name: "UZI",
+    component: UZI,
   },
 ];
 
