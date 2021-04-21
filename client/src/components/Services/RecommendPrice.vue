@@ -10,7 +10,7 @@
 
 <script>
 import BlurCard from "@/components/BaseComponents/BlurCard.vue";
-import PlusButton from "@/components/PlusButton.vue";
+import PlusButton from "@/components/BaseComponents/PlusButton.vue";
 export default {
     name: "RecommendPrice",
     components: {

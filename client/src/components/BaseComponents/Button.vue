@@ -1,7 +1,7 @@
 <template>
-    <button  @click="func()" v-bind:class="[color, size, caption ? 'caption' : '']" class="btn">
+    <router-link :to="tot" @click="func()" v-bind:class="[color, size, caption ? 'caption' : '']" class="btn inline-block">
         <slot></slot>
-    </button>
+    </router-link>
 </template>
 
 <script>
@@ -9,6 +9,11 @@ export default {
     name: 'Button',
     props: {
         color: String, 
+        tot:{
+            default: {
+                name: ""
+            }
+        },
         caption: { 
             type: Boolean,
             default: true,

@@ -41,9 +41,9 @@
 </template>
 
 <script>
-import Step from '@/components/Step.vue';
-import DoctorCard from '@/components/DoctorCard.vue';
-import Button from '@/components/Button.vue';
+import Step from '@/components/Main/Step.vue';
+import DoctorCard from '@/components/Main/DoctorCard.vue';
+import Button from '@/components/BaseComponents/Button.vue';
 import CatIcon from '@/components/BaseComponents/CatIcon.vue';
 import BlurCard from '@/components/BaseComponents/BlurCard.vue';
 

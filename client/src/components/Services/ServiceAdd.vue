@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import PlusButton from "@/components/PlusButton.vue";
+import PlusButton from "@/components/BaseComponents/PlusButton.vue";
 import PriceWithBg from "@/components/BaseComponents/PriceWithBg.vue";
 export default {
   components: {

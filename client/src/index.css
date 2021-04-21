@@ -95,7 +95,7 @@ body::before {
         @apply bg-yellow-400 shadow-yellow;
     }
 
-    &.btn_sm {
+    &.btn_sm{
         @apply py-2.5 px-9;
     }
 
@@ -131,7 +131,6 @@ body::before {
 }
 
 /* END BUTTON */
-
 
 /* HEADER */
 

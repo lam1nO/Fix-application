@@ -18,19 +18,19 @@ const routes = [
   },
   {
     path: "/services",
-    name: "Service",
+    name: "Services",
     component: Services,
-  },
-  {
-    path: "/contact",
-    name: "Contact",
-    component: Contact,
   },
   {
     path: "/services/uzi",
     name: "UZI",
     component: UZI,
   },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: Contact,
+  }
 ];
 
 const router = createRouter({

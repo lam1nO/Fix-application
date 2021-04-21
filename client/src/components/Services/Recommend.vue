@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import RecommendPrice from "@/components/RecommendPrice.vue"
+import RecommendPrice from "@/components/Services/RecommendPrice.vue"
 import BlurCard from "@/components/BaseComponents/BlurCard.vue"
 export default {
     name: "Recommend",

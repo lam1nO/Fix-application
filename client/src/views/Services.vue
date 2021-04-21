@@ -22,13 +22,13 @@
 </template>
 
 <script>
-import ServiceInstruct from '@/components/ServiceInstruct.vue'
-import Recommend from '@/components/Recommend.vue'
-import Category from '@/components/Category.vue'
+import ServiceInstruct from '@/components/Services/ServiceInstruct.vue'
+import Recommend from '@/components/Services/Recommend.vue'
+import Category from '@/components/Services/Category.vue'
 import BlurCard from '@/components/BaseComponents/BlurCard.vue'
 
 export default {
-  name: "UZI",
+  name: "Services",
   components: { 
       Category,
       ServiceInstruct,

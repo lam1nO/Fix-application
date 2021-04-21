@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import ServiceAdd from '@/components/ServiceAdd.vue'
-import ServiceInstruct from '@/components/ServiceInstruct.vue'
-import Recommend from '@/components/Recommend.vue'
+import ServiceAdd from '@/components/Services/ServiceAdd.vue'
+import ServiceInstruct from '@/components/Services/ServiceInstruct.vue'
+import Recommend from '@/components/Services/Recommend.vue'
 export default {
     name: "UZI",
     components: { 
