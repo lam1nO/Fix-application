@@ -15,12 +15,9 @@
 </template>
 
 <script>
-import Button from '@/components/BaseComponents/Button.vue';
+
 export default {
   name: "DoctorCard",
-  components: {
-    Button
-  },
   props: {
     name: String,
     desc: Array,

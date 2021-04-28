@@ -16,13 +16,9 @@
 </template>
 
 <script>
-import Button from "@/components/BaseComponents/Button.vue";
 
 export default {
   name: "ServiceCard",
-  components: {
-    Button,
-  },
   props: {
     title: String,
     price: Number,

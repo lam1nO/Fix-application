@@ -11,13 +11,9 @@
 </template>
 
 <script>
-import BaseIcon from '@/components/BaseComponents/BaseIcon';
 
 export default {
     name: 'Contacts',
-    components: {
-        BaseIcon
-    },
     data() {
         return {
             contactsFields: [

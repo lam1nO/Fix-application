@@ -17,17 +17,12 @@
 </template>
 
 <script>
-import Logo from '@/components/header/Logo.vue';
-import Button from '@/components/BaseComponents/Button.vue';
-import BaseIcon from '@/components/BaseComponents/BaseIcon.vue';
-import TextWithBg from '@/components/BaseComponents/TextWithBg.vue';
+import Logo from './Logo.vue';
 
 export default {
     name: 'Header', 
     components: {
-        Logo, Button,
-        BaseIcon,
-        TextWithBg
+        Logo, 
     }
 }
 </script>

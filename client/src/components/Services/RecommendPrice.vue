@@ -9,13 +9,9 @@
 </template>
 
 <script>
-import BlurCard from "@/components/BaseComponents/BlurCard.vue";
-import PlusButton from "@/components/BaseComponents/PlusButton.vue";
+
 export default {
     name: "RecommendPrice",
-    components: {
-        BlurCard, PlusButton
-    },
     props: {
         title: String,
         price: Number

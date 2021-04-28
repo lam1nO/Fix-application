@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Contacts from './footer/Contacts.vue'
+import Contacts from './Contacts.vue'
 
 export default {
     name: 'Footer', 

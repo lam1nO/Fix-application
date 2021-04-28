@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import Button from '@/components/BaseComponents/Button.vue'
 export default {
   name: "DoctorTime",
   data() {

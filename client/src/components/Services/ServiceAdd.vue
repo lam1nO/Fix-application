@@ -9,13 +9,8 @@
 </template>
 
 <script>
-import PlusButton from "@/components/BaseComponents/PlusButton.vue";
-import PriceWithBg from "@/components/BaseComponents/PriceWithBg.vue";
+
 export default {
-  components: {
-    PlusButton,
-    PriceWithBg
-  },
   name: "ServiceAdd",
   props: {
     title: String,

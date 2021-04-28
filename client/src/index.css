@@ -92,7 +92,7 @@ body::before {
     }
 
     &.btn_yellow {
-        @apply bg-yellow-400 shadow-yellow;
+        @apply bg-yellow-400 shadow-yellow hover:bg-yellow-500 transition-colors;
     }
 
     &.btn_sm{
@@ -111,6 +111,8 @@ body::before {
         @apply py-2 px-5 rounded-md text-sm font-semibold;
         color: #0EA5E9;
     }
+
+
 }
 
 .plus_btn{

@@ -9,12 +9,8 @@
 </template>
 
 <script>
-import Button from "@/components/BaseComponents/Button.vue"
 export default {
   name: 'Category',
-  components:{
-    Button
-  },
   props: {
     title: String,
     desc: String

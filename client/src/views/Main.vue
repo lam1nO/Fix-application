@@ -1,16 +1,38 @@
 <template>
   <section id="hero" class="mt-10 flex items-center main_container relative">
-    
     <div class="hero_text_container">
-      <p class="caption mb-4 text-blue-400 text-left">пройти обследование - просто</p>
-      <h1 class="font-extrabold leading-none">Записывайтесь <br> просто</h1>
-      <p class="text-lg mt-6">Вам нужно лишь выбрать подходящую услугу, <br> оставить свои контактные данные и получить <br> результаты вашего обследования</p>
-      <Button :size="'btn_lg'" :color="'btn_blue'" :class="'mt-5'">выбрать услугу</Button>
+      <p class="caption mb-4 text-blue-400 text-left">
+        пройти обследование - просто
+      </p>
+      <h1 class="font-extrabold leading-none">
+        Записывайтесь <br />
+        просто
+      </h1>
+      <p class="text-lg mt-6">
+        Вам нужно лишь выбрать подходящую услугу, <br />
+        оставить свои контактные данные и получить <br />
+        результаты вашего обследования
+      </p>
+      <Button :size="'btn_lg'" :color="'btn_blue'" :class="'mt-5'"
+        >выбрать услугу</Button
+      >
     </div>
     <div class="hero_decor_container relative flex-auto ml-5">
-      <blur-card :styles="['p-2.5', 'rounded-lg', 'absolute', 'top-4']" :opacity="'50'" :bg="'bg-white'" :blur="'40'"><cat-icon :iconName="'UZI'"></cat-icon></blur-card>
+      <blur-card
+        :styles="['p-2.5', 'rounded-lg', 'absolute', 'top-4']"
+        :opacity="'50'"
+        :bg="'bg-white'"
+        :blur="'40'"
+        ><cat-icon :iconName="'UZI'"></cat-icon
+      ></blur-card>
 
-      <blur-card :styles="['p-2.5', 'rounded-lg', 'absolute', 'bottom-4', 'right-10']" :opacity="'50'" :bg="'bg-white'" :blur="'40'"><cat-icon :iconName="'Cardio'"></cat-icon></blur-card>
+      <blur-card
+        :styles="['p-2.5', 'rounded-lg', 'absolute', 'bottom-4', 'right-10']"
+        :opacity="'50'"
+        :bg="'bg-white'"
+        :blur="'40'"
+        ><cat-icon :iconName="'Cardio'"></cat-icon
+      ></blur-card>
     </div>
   </section>
   <section class="howworks w-full mt-6 z-10">
@@ -18,34 +40,75 @@
       <h2 class="text-gray-600 text-left">Как это работает?</h2>
       <p class="caption text-blue-400 text-left">Всего 4 простых шага</p>
       <div class="steps-container flex justify-between mt-14">
-        <Step :num=1 :title="'Услуга'" :desc="'Выберите нужную вам услугу'"></Step>
-        <Step :num=2 :title="'Запись'" :desc="'Запишитесь в ближайшую к вам клинику '"></Step>
-        <Step :num=3 :title="'Обследование'" :desc="'Пройдите обследование'"></Step>
-        <Step :num=4 :title="'Результаты'" :desc="'Получите результаты с расшифровками'"></Step>
+        <Step
+          :num="1"
+          :title="'Услуга'"
+          :desc="'Выберите нужную вам услугу'"
+        ></Step>
+        <Step
+          :num="2"
+          :title="'Запись'"
+          :desc="'Запишитесь в ближайшую к вам клинику '"
+        ></Step>
+        <Step
+          :num="3"
+          :title="'Обследование'"
+          :desc="'Пройдите обследование'"
+        ></Step>
+        <Step
+          :num="4"
+          :title="'Результаты'"
+          :desc="'Получите результаты с расшифровками'"
+        ></Step>
       </div>
     </div>
   </section>
 
   <section class="doctors-section w-full mt-11 z-10">
-    <div class="main_container">
+    <div class="main_container flex flex-col">
       <h2 class="text-gray-600 text-left">Наши доктора</h2>
       <div class="doctorcards-container flex justify-between mt-14">
-        <DoctorCard :name="'Гусманов Нияз'" :desc="['Узист','Кардиолог']"></DoctorCard>
-        <DoctorCard :name="'Гусманов Нияз'" :desc="['Узист','Кардиолог']"></DoctorCard>
-        <DoctorCard :name="'Гусманов Нияз'" :desc="['Узист','Кардиолог']"></DoctorCard>
-        <DoctorCard :name="'Гусманов Нияз'" :desc="['Узист','Кардиолог']"></DoctorCard>
+        <DoctorCard
+          :name="'Гусманов Нияз'"
+          :desc="['Узист', 'Кардиолог']"
+        ></DoctorCard>
+        <DoctorCard
+          :name="'Гусманов Нияз'"
+          :desc="['Узист', 'Кардиолог']"
+        ></DoctorCard>
+        <DoctorCard
+          :name="'Гусманов Нияз'"
+          :desc="['Узист', 'Кардиолог']"
+        ></DoctorCard>
+        <DoctorCard
+          :name="'Гусманов Нияз'"
+          :desc="['Узист', 'Кардиолог']"
+        ></DoctorCard>
       </div>
-      <Button :color="'btn_yellow'" :size="'btn_sm'" :caption="false" class="mt-11"><h6 class="text-txt-white">Все доктора</h6></Button>
+      <Button
+        :color="'btn_yellow'"
+        :size="'btn_sm'"
+        :caption="false"
+        class="mt-11 mx-auto text-txt-white inline-flex"
+      >
+        Все доктора
+        <base-icon
+          :pic_name="require('@/assets/right.svg')"
+          desc="right arrow"
+          :add_class="'ml-3'"
+        ></base-icon>
+      </Button>
     </div>
   </section>
 </template>
 
 <script>
-import Step from '@/components/Main/Step.vue';
-import DoctorCard from '@/components/Main/DoctorCard.vue';
-import Button from '@/components/BaseComponents/Button.vue';
-import CatIcon from '@/components/BaseComponents/CatIcon.vue';
-import BlurCard from '@/components/BaseComponents/BlurCard.vue';
+import Step from "@/components/Main/Step.vue";
+import DoctorCard from "@/components/Main/DoctorCard.vue";
+import Button from "@/components/BaseComponents/Button.vue";
+import CatIcon from "@/components/BaseComponents/CatIcon.vue";
+import BaseIcon from "@/components/BaseComponents/BaseIcon.vue";
+import BlurCard from "@/components/BaseComponents/BlurCard.vue";
 
 // @ is an alias to /src
 export default {
@@ -53,9 +116,10 @@ export default {
   components: {
     Step,
     DoctorCard,
+    BaseIcon,
     Button,
     CatIcon,
-    BlurCard
-  }
+    BlurCard,
+  },
 };
 </script>
