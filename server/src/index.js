@@ -3,19 +3,14 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
-const config = require('./config/config')   
+import config from '@config/config'
+import dotenv from 'dotenv'
+import v1Router from '@routes'
 mongoose.Promise = global.Promise
 
+dotenv.config()
 
-const app = express()
-
-app.use(morgan('combined'))
-app.use(bodyParser.json())
-app.use(cors())
-
-// ROUTES
-app.use(require('./routes/services'))
-
+// MONGODB
 mongoose.connect(config.dbURL, config.dbOptions)
 mongoose.connection
   .once('open', () => {
@@ -25,12 +20,15 @@ mongoose.connection
   })
   .on('error', error => console.warn(error))
 
+const app = express()
+
+app.use(morgan('combined'))
+app.use(bodyParser.json())
+app.use(cors())
+
+// ROUTES
+app.use(v1Router)
+
+
 // app.listen(process.env.PORT || config.port,
 //     () => console.log(`Server start on port ${config.port} ...`))
-
-// app.get('/posts', (req, res) => {
-//     res.send([{
-//         title: "Starting!",
-//         description: "Hi!"
-//     }])
-// });

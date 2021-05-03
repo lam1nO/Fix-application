@@ -1,6 +1,9 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 module.exports = {
     port: 8090,
     host: "localhost",
-    dbURL: "mongodb+srv://dbUser:90uzesev@cluster0.dafqi.mongodb.net/UziFix_Test?retryWrites=true&w=majority",
-    dbOptions: {useNewUrlParser: true}
+    dbURL: process.env.LOCAL_DB,
+    dbOptions: {useNewUrlParser: true, useUnifiedTopology: true}
 }
