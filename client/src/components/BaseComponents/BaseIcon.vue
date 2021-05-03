@@ -1,33 +1,29 @@
 <template>
-    <img :src="pic_name" :alt="desc" :class="add_class">
+  <img :src="pic_name" :alt="desc" :class="add_class" />
 </template>
 
 <script>
 export default {
-    name: "BaseIcon",
-    props: {
-        pic_name: {
-            type: String,
-            default: "Phone.svg",
-            required: true
-        },
-        add_class: {
-            type: String,
-            default: ''
-        },
-        desc: {
-            type: String,
-            required: false
-        }
+  name: "BaseIcon",
+  props: {
+    pic_name: {
+      type: String,
+      default: "Phone.svg",
+      required: true,
     },
-    data() {
-        return {
-            
-        }
+    add_class: {
+      type: String,
+      default: "",
     },
-}
+    desc: {
+      type: String,
+      required: false,
+    },
+  },
+  data() {
+    return {};
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

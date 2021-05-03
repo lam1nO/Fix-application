@@ -3,14 +3,20 @@
     <div class="doctor flex flex-col ml-3 items-start mr-4">
       <p class="name text-2xl font-semibold text-gray-600">{{ name }}</p>
       <div class="desc-container flex mt-1 mb-4">
-        <div class="text-sm text-gray-400 font-semibold" v-for="item in filter()" :key="item">
+        <div
+          class="text-sm text-gray-400 font-semibold"
+          v-for="item in filter()"
+          :key="item"
+        >
           {{ item }}, &zwnj;
         </div>
         <div class="text-sm text-gray-400 font-semibold">{{ last_item }}</div>
       </div>
-    <Button :color="'btn_lightblue'" :caption="false" :size="'btn_md'">Расписание</Button>
+      <Button :color="'btn_lightblue'" :caption="false" :size="'btn_md'"
+        >Расписание</Button
+      >
     </div>
-     <!-- avatar -->
+    <!-- avatar -->
     <div class="w-14 h-14 mr-1 ml-3 rounded-full bg-gray-200"></div>
   </div>
 </template>
@@ -42,9 +48,7 @@ export default {
       return arr;
     },
   },
-  components: {Button},
 };
 </script>
 
-<style>
-</style>
+<style></style>

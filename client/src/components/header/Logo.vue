@@ -1,15 +1,13 @@
 <template>
-    <a href="/" class="logo">
-        <img src="@/assets/logo.svg" alt="">
-    </a>
+  <a href="/" class="logo">
+    <img src="@/assets/logo.svg" alt="" />
+  </a>
 </template>
 
 <script>
 export default {
-    name: 'Logo'
-}
+  name: "Logo",
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -5,7 +5,9 @@
     </div>
     <div class="flex justify-between">
       <p class="text-base text-txt-black">{{ price }} руб</p>
-      <div class="flex items-center time-container rounded-md bg-rose-400 px-1 text-txt-white text-xs">
+      <div
+        class="flex items-center time-container rounded-md bg-rose-400 px-1 text-txt-white text-xs"
+      >
         {{ time }}
       </div>
     </div>
@@ -16,7 +18,6 @@
 </template>
 
 <script>
-
 export default {
   name: "ServiceCard",
   props: {
@@ -27,5 +28,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

@@ -1,7 +1,7 @@
-import api from '@/services/api'
+import api from "@/services/api";
 
 export default {
-    fetchPosts () {
-        return api().get('posts')
-    }
-}
+  fetchPosts() {
+    return api().get("posts");
+  },
+};
