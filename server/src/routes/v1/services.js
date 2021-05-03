@@ -1,5 +1,5 @@
 import {Router} from 'express'
-const Service = require('@models/serviceModel')
+import {Service, BaseService, Category} from '@models/Service'
 import serviceController  from '@controllers/v1/services.controller'
 
 const serviceRouter = new Router()
