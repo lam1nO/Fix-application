@@ -13,6 +13,7 @@ serviceRouter.get('/services', serviceController.fetchServices)
 // BaseServices
 serviceRouter.post('/base_service', servicesController.createBaseService)
 serviceRouter.get('/base_service/:id', serviceController.getBaseService)
+serviceRouter.get('/base_service', servicesController.fetchBaseService)
 
 
 // CATS

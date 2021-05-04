@@ -17,7 +17,6 @@ const baseCreate = (req, res) => {}
 const fetchServices = async (req, res) => {
     const options = {limit: parseInt(req.query.limit) || false}
     const filter = { popular: req.query.pop || false}
-    console.log(options, filter)
     await Service.find(filter, null, options, (err, services) => {
         if (err) { 
             res.send({success: false, error: err})
@@ -67,9 +66,9 @@ const createBaseService = async (req, res) => {
     })
 }
 
-// GET BaseService
+// GET BaseService : id
 const getBaseService = async (req, res) => {
-    const baseService = BaseService.findById(req.params.id, (err, base_service) => {
+    await BaseService.findById(req.params.id, (err, base_service) => {
         if (err) {
             res.send({
                 success: false,
@@ -83,6 +82,25 @@ const getBaseService = async (req, res) => {
         }
     }).populate('category')
 
+}
+
+// GET fetch BaseService
+const fetchBaseService = async (req, res) => {
+    const filter = {category : req.query.category || 0}
+    console.log(filter)
+    await BaseService.find(filter, (err, data) => {
+        if (err) {
+            res.send({
+                success: false,
+                err
+            })
+        } {
+            res.send({
+                success: true,
+                base_services: data
+            })
+        }
+    }).populate('category')
 }
 
 // PUT BaseService
@@ -130,5 +148,6 @@ export default {
     getCategories,
     fetchServices,
     createBaseService,
-    getBaseService
+    getBaseService,
+    fetchBaseService
 }
