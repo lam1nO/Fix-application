@@ -32,6 +32,9 @@
       <div class="instruct_recomm flex flex-col">
         <ServiceInstruct class="mb-7"></ServiceInstruct>
         <Recommend />
+        <select name="cats" id="cats">
+          <option v-for="option in categories" :key="option.slug" value="option.slug">{{option.name}}</option>
+        </select>
       </div>
     </div>
   </section>
@@ -51,6 +54,9 @@ export default {
     Recommend,
     BlurCard,
   },
+  created() {
+    this.$store.dispatch('fetchCategories')
+  },
   data() {
     return {
       items: [
@@ -67,6 +73,11 @@ export default {
       ],
     };
   },
+  computed: {
+    categories() {
+      return this.$store.state.categories['categories']
+    }
+  }
 };
 </script>
 
