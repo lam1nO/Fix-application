@@ -39,9 +39,11 @@ const fetchServices = async (req, res) => {
 
 // getService
 
+// 
 // BaseServices
+// 
 
-// creaate type of service
+// POST BaseService
 const createBaseService = async (req, res) => {
     const baseService = new BaseService({
         title: req.body.title,
@@ -65,8 +67,25 @@ const createBaseService = async (req, res) => {
     })
 }
 
-// get BaseService
-// edit type of service
+// GET BaseService
+const getBaseService = async (req, res) => {
+    const baseService = BaseService.findById(req.params.id, (err, base_service) => {
+        if (err) {
+            res.send({
+                success: false,
+                err
+            })
+        } else {
+            res.send({
+                success: true,
+                base_service
+            })
+        }
+    }).populate('category')
+
+}
+
+// PUT BaseService
 
 
 // Cats
@@ -110,5 +129,6 @@ export default {
     createCategory,
     getCategories,
     fetchServices,
-    createBaseService
+    createBaseService,
+    getBaseService
 }
