@@ -1,6 +1,7 @@
 import {Router} from 'express'
 import {Service, BaseService, Category} from '@models/Service'
 import serviceController  from '@controllers/v1/services.controller'
+import servicesController from '../../controllers/v1/services.controller'
 
 const serviceRouter = new Router()
 
@@ -8,6 +9,9 @@ const serviceRouter = new Router()
 
 // SERVICES
 serviceRouter.get('/services', serviceController.fetchServices)
+
+// BaseServices
+serviceRouter.post('/base_service', servicesController.createBaseService)
 
 
 // CATS

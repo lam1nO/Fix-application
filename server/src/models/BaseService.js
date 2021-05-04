@@ -3,8 +3,9 @@ const {Schema} = mongoose
 
 const BaseServiceSchema = new Schema({
     title: String,
-    description: String,
-    category: {type: Schema.Types.ObjectId, ref: 'Category'}
+    description: { type: String, default: "" },
+    popular: { type: Boolean, default: false},
+    category: {type: Schema.Types.ObjectId, ref: 'Category', required: true}
 })
 
 export default mongoose.model('BaseService', BaseServiceSchema)

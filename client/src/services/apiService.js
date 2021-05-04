@@ -8,3 +8,4 @@ export default {
     return api().get('categories');
   }
 };
+  

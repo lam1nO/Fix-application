@@ -1,7 +1,8 @@
 import Category from '@models/Category'
 import helpers from '@/helpers'
 import Service from '@models/Service'
-// BaseServices
+import BaseService from '@models/BaseService'
+import mongoose from 'mongoose'
 
 const baseCreate = (req, res) => {}
 
@@ -17,7 +18,7 @@ const fetchServices = async (req, res) => {
     const options = {limit: parseInt(req.query.limit) || false}
     const filter = { popular: req.query.pop || false}
     console.log(options, filter)
-    Service.find(filter, null, options, (err, services) => {
+    await Service.find(filter, null, options, (err, services) => {
         if (err) { 
             res.send({success: false, error: err})
         }
@@ -30,11 +31,40 @@ const fetchServices = async (req, res) => {
     })
 }  
 
-// createService
+// createService - post
+
+// const createService = async (req, res) => {
+//     const Service = 
+// } 
+
 // getService
 
 // BaseServices
+
 // creaate type of service
+const createBaseService = async (req, res) => {
+    const baseService = new BaseService({
+        title: req.body.title,
+        description: req.body.description,
+        popular: req.body.popular,
+        category: req.body.category
+    })
+    await baseService.save((err, data) => {
+        if (err) {
+            console.log(err)
+            res.send({
+                success: false,
+                error: err
+            })
+        } else {
+            res.send({
+                success: true,
+                data
+            })
+        }
+    })
+}
+
 // get BaseService
 // edit type of service
 
@@ -79,5 +109,6 @@ const getCategories = async (req, res) => {
 export default {
     createCategory,
     getCategories,
-    fetchServices
+    fetchServices,
+    createBaseService
 }
