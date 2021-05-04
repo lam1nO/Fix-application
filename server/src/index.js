@@ -10,15 +10,6 @@ mongoose.Promise = global.Promise
 
 dotenv.config()
 
-// MONGODB
-mongoose.connect(config.dbURL, config.dbOptions)
-mongoose.connection
-  .once('open', () => {
-    console.log(`Mongoose - successful connection ...`)
-    app.listen(process.env.PORT || config.port,
-      () => console.log(`Server start on port ${config.port} ...`))
-  })
-  .on('error', error => console.warn(error))
 
 const app = express()
 
@@ -29,6 +20,15 @@ app.use(cors())
 // ROUTES
 app.use(v1Router)
 
+// MONGODB
+mongoose.connect(config.dbURL, config.dbOptions)
+mongoose.connection
+  .once('open', () => {
+    console.log(`Mongoose - successful connection ...`)
+    app.listen(process.env.PORT || config.port,
+      () => console.log(`Server start on port ${config.port} ...`))
+  })
+  .on('error', error => console.warn(error))
 
 // app.listen(process.env.PORT || config.port,
 //     () => console.log(`Server start on port ${config.port} ...`))

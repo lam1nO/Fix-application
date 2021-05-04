@@ -4,21 +4,14 @@ import serviceController  from '@controllers/v1/services.controller'
 
 const serviceRouter = new Router()
 
-serviceRouter.post('/create', serviceController.create)
+// serviceRouter.post('/', serviceController.)
 
-//const service = new Service({
-//     title: req.body.title,
-//     price: req.body.price
-// })
-// service.save((err, data) => {
-//     if (err) {
-//         console.log(err);
-//     } else {
-//         res.send({
-//             success: true,
-//             message: `Service Post ID: ${data._id}`
-//         })
-//     }
-// })
+// SERVICES
+serviceRouter.get('/services', serviceController.fetch)
+
+
+// CATS
+serviceRouter.post('/category', serviceController.createCategory)
+serviceRouter.get('/categories', serviceController.getCategories)
 
 export default serviceRouter
