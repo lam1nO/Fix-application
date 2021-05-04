@@ -1,5 +1,6 @@
 import Category from '@models/Category'
 import helpers from '@/helpers'
+import Service from '@models/Service'
 // BaseServices
 
 const baseCreate = (req, res) => {}
@@ -12,13 +13,19 @@ const baseCreate = (req, res) => {}
 // @popularity - filter
 // @category
 
-const fetch = async (req, res) => {
-    Service.find({}, (err, services) => {
+const fetchServices = async (req, res) => {
+    const options = {limit: parseInt(req.query.limit) || false}
+    const filter = { popular: req.query.pop || false}
+    console.log(options, filter)
+    Service.find(filter, null, options, (err, services) => {
         if (err) { 
-            res.sendStatus(500)
+            res.send({success: false, error: err})
         }
         else {
-            res.send({services: services})
+            res.send({
+                success: true,
+                services: services
+            })
         } 
     })
 }  
@@ -72,5 +79,5 @@ const getCategories = async (req, res) => {
 export default {
     createCategory,
     getCategories,
-    fetch
+    fetchServices
 }

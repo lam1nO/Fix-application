@@ -7,7 +7,7 @@ const serviceRouter = new Router()
 // serviceRouter.post('/', serviceController.)
 
 // SERVICES
-serviceRouter.get('/services', serviceController.fetch)
+serviceRouter.get('/services', serviceController.fetchServices)
 
 
 // CATS

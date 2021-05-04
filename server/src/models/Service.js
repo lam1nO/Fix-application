@@ -6,6 +6,7 @@ const ServiceSchema = new Schema({
     price: Number,
     status: String,
     time: Date,
+    popular: Boolean
 })
 
 export default mongoose.model('Service', ServiceSchema)
