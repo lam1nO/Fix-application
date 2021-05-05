@@ -218,3 +218,25 @@ header {
   top: 0;
   transform: translateX(-50%);
 }
+
+/* SPLIDER */
+
+.splide__arrow--prev {
+  left: -80px;
+}
+
+.splide__arrow {
+  @apply w-12 h-12 rounded-md bg-opacity-100 bg-white;
+
+  svg {
+    fill: #60A5FA;
+  }
+
+  .splide__pagination {
+    display: none;
+  }
+}
+
+.splide__arrow--next {
+  right: -80px;
+}

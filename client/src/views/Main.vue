@@ -103,13 +103,14 @@
   <section class="services-section mt-10">
     <div class="main_container flex flex-col">
       <h2 class="text-gray-600 text-left">Услуги клиники</h2>
-      <BlurCard :blur="'100'" :opacity="'20'" :bg="'bg-blurWhite-f3'" :styles="['py-10 w-full rounded-md flex']">
-        <ServiceSlide
-          v-for="service in services" 
-          :key="service.name"
-          :service="service"
-        /> 
+      <BlurCard :blur="'100'" :opacity="'20'" :bg="'bg-blurWhite-f3'" :styles="['py-10 w-full rounded-md flex justify-center mt-5']">
+        <ServiceSlider class="w-full"/>
       </BlurCard>
+    </div>
+  </section>
+  <section class="services-section mt-10">
+    <div class="main_container">
+      <h2 class="text-gray-600 text-left">Почему это удобно?</h2>
     </div>
   </section>
 </template>
@@ -117,7 +118,7 @@
 <script>
 import Step from "@/components/Main/Step.vue";
 import DoctorCard from "@/components/Main/DoctorCard.vue";
-import ServiceSlide from "@/components/Main/Services/ServiceSlide.vue";
+import ServiceSlider from "@/components/Main/Services/ServiceSlider.vue";
 
 // @ is an alias to /src
 export default {
@@ -125,28 +126,11 @@ export default {
   components: {
     Step,
     DoctorCard,
-    ServiceSlide
-
+    ServiceSlider
   },
   data() {
     return {
-      services: [
-        {
-          name: 'Допплерография плода',
-          price: 800,
-          duration: '1 день'
-        },
-        {
-          name: 'Допплерография плода',
-          price: 800,
-          duration: '1 день'
-        },
-        {
-          name: 'Допплерография плода',
-          price: 800,
-          duration: '1 день'
-        }
-      ]
+      
     }
   }
 };
