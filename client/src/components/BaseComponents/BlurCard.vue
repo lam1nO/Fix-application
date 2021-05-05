@@ -13,9 +13,11 @@ export default {
     },
     bg: {
       type: String,
+      default: 'bg-white'
     },
     opacity: {
       type: String,
+      default: "20"
     },
     styles: {
       type: Array,
@@ -27,7 +29,7 @@ export default {
     },
     bgOpacity: function () {
       return "bg-opacity-" + this.opacity;
-    },
+    }
   },
 };
 </script>

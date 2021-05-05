@@ -20,6 +20,9 @@ module.exports = {
       },
       rose: colors.rose,
       white: "#ffffff",
+      blurWhite: {
+        f3: "#f3f3f3"
+      }
     },
     extend: {
       boxShadow: {

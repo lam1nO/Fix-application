@@ -74,7 +74,11 @@ body::before {
   border-radius: 10px;
 
   &.btn_green {
-    @apply bg-green-400 shadow-green;
+    @apply bg-green-400 shadow-green hover:bg-green-500 ;
+  }
+
+  &.btn_full {
+    @apply w-full py-3 flex justify-center;
   }
 
   &.btn_blue {
@@ -123,11 +127,17 @@ body::before {
 }
 
 .text_with_bg {
-  @apply flex justify-center items-center h-6 px-1 rounded-md font-semibold text-xl;
+  @apply flex justify-center text-white items-center h-6 px-1 rounded-md font-semibold text-xl;
   letter-spacing: normal;
   min-width: 24px;
   font-family: "Montserrat", sans-serif;
 }
+
+.rose_text_with_bg {
+  @apply bg-rose-400 text-xs font-normal;
+}
+
+
 
 /* END BUTTON */
 
@@ -168,6 +178,10 @@ header {
   background: #fefefe 0.8;
   width: 190px;
   height: 140px;
+}
+
+.service-slide {
+  width: 190px;
 }
 
 .category-container {

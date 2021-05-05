@@ -100,15 +100,24 @@
       </Button>
     </div>
   </section>
+  <section class="services-section mt-10">
+    <div class="main_container flex flex-col">
+      <h2 class="text-gray-600 text-left">Услуги клиники</h2>
+      <BlurCard :blur="'100'" :opacity="'20'" :bg="'bg-blurWhite-f3'" :styles="['py-10 w-full rounded-md flex']">
+        <ServiceSlide
+          v-for="service in services" 
+          :key="service.name"
+          :service="service"
+        /> 
+      </BlurCard>
+    </div>
+  </section>
 </template>
 
 <script>
 import Step from "@/components/Main/Step.vue";
 import DoctorCard from "@/components/Main/DoctorCard.vue";
-import Button from "@/components/BaseComponents/Button.vue";
-import CatIcon from "@/components/BaseComponents/CatIcon.vue";
-import BaseIcon from "@/components/BaseComponents/BaseIcon.vue";
-import BlurCard from "@/components/BaseComponents/BlurCard.vue";
+import ServiceSlide from "@/components/Main/Services/ServiceSlide.vue";
 
 // @ is an alias to /src
 export default {
@@ -116,10 +125,29 @@ export default {
   components: {
     Step,
     DoctorCard,
-    BaseIcon,
-    Button,
-    CatIcon,
-    BlurCard,
+    ServiceSlide
+
   },
+  data() {
+    return {
+      services: [
+        {
+          name: 'Допплерография плода',
+          price: 800,
+          duration: '1 день'
+        },
+        {
+          name: 'Допплерография плода',
+          price: 800,
+          duration: '1 день'
+        },
+        {
+          name: 'Допплерография плода',
+          price: 800,
+          duration: '1 день'
+        }
+      ]
+    }
+  }
 };
 </script>
