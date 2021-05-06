@@ -10,7 +10,7 @@ import mongoose from 'mongoose'
 
 const fetchServices = async (req, res) => {
     const options = {limit: parseInt(req.query.limit) || false}
-    const filter = { popular: req.query.pop || false}
+    const filter = { popular: req.query.pop || false }
     await Service.find(filter, null, options, (err, services) => {
         if (err) { 
             res.send({success: false, error: err})
@@ -111,8 +111,7 @@ const fetchBaseService = async (req, res) => {
 const createCategory = async (req, res) => {
     let slug = helpers.createSlug(req.body.name)
     const category = new Category({
-        name: req.body.name,
-        slug
+        name: req.body.name, slug
     })
     await category.save((err, data) => {
         if (err) {
@@ -120,7 +119,7 @@ const createCategory = async (req, res) => {
         } else {
             res.send({
                 success: true,
-                category: data.name
+                category: data
             })
         }
     })

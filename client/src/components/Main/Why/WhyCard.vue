@@ -1,6 +1,6 @@
 <template>
   <blur-card
-    :styles="'why_card rounded-md items-center px-5 py-6 flex'"
+    :styles="['why_card rounded-md items-center px-5 py-6 flex']"
     :opacity="'20'"
   >
     <img :src="data.img" :alt="data.text" class="mr-8" />

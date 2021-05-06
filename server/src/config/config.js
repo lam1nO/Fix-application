@@ -4,6 +4,6 @@ dotenv.config()
 module.exports = {
     port: 8090,
     host: "localhost",
-    dbURL: process.env.LOCAL_DB,
+    dbURL: process.env.REMOTE_TEST,
     dbOptions: {useNewUrlParser: true, useUnifiedTopology: true}
 }
