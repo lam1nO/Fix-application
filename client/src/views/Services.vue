@@ -33,7 +33,13 @@
         <ServiceInstruct class="mb-7"></ServiceInstruct>
         <Recommend />
         <select name="cats" id="cats">
-          <option v-for="option in categories" :key="option.slug" value="option.slug">{{option.name}}</option>
+          <option
+            v-for="option in categories"
+            :key="option.slug"
+            value="option.slug"
+          >
+            {{ option.name }}
+          </option>
         </select>
       </div>
     </div>
@@ -55,7 +61,7 @@ export default {
     BlurCard,
   },
   created() {
-    this.$store.dispatch('fetchCategories')
+    this.$store.dispatch("fetchCategories");
   },
   data() {
     return {
@@ -75,9 +81,9 @@ export default {
   },
   computed: {
     categories() {
-      return this.$store.state.categories['categories']
-    }
-  }
+      return this.$store.state.categories["categories"];
+    },
+  },
 };
 </script>
 
