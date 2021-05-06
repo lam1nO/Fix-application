@@ -10,12 +10,15 @@ export default {
   props: {
     blur: {
       type: String,
+      default: "40",
     },
     bg: {
       type: String,
+      default: "bg-white",
     },
     opacity: {
       type: String,
+      default: "20",
     },
     styles: {
       type: Array,
