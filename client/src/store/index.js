@@ -1,31 +1,32 @@
 import { createStore } from "vuex";
-import apiService from '@/services/apiService'
+import apiService from "@/services/apiService";
 
 export default createStore({
   state: {
-    categories: []
+    categories: [],
   },
   mutations: {
     UPDATE_CAT(state, categories) {
-      console.log('Mutating cats');
-      state.categories = categories
-    }
+      console.log("Mutating cats");
+      state.categories = categories;
+    },
   },
   actions: {
-    fetchCategories({commit}) {
-      return apiService.fetchCategories()
-      .then(response => {
-        commit('UPDATE_CAT', response.data)
-      }) 
-      .catch(error => {
-        throw error
-      })
-    }
+    fetchCategories({ commit }) {
+      return apiService
+        .fetchCategories()
+        .then((response) => {
+          commit("UPDATE_CAT", response.data);
+        })
+        .catch((error) => {
+          throw error;
+        });
+    },
   },
   getters: {
     cats(state) {
-      return state.categories
-    }
+      return state.categories;
+    },
   },
   modules: {},
 });

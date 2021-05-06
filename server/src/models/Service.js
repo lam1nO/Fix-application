@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 const {Schema} = mongoose
 
 const ServiceSchema = new Schema({
-    service: {type: Schema.Types.ObjectId, ref: 'BaseService'},
+    service: {type: Schema.Types.ObjectId, ref: 'BaseService', required: true},
     price: Number,
     status: String,
-    time: Date,
+    date: { type: Date }
 })
 
 export default mongoose.model('Service', ServiceSchema)

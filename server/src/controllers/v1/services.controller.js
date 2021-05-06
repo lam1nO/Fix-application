@@ -4,15 +4,9 @@ import Service from '@models/Service'
 import BaseService from '@models/BaseService'
 import mongoose from 'mongoose'
 
-const baseCreate = (req, res) => {}
-
-
 // Services 
 
-// getServices with params 
-// @limit - 20 (f.e.)
-// @popularity - filter
-// @category
+// getServices with params  @limit - 20 (f.e.) @popular - filter @category
 
 const fetchServices = async (req, res) => {
     const options = {limit: parseInt(req.query.limit) || false}
@@ -32,9 +26,14 @@ const fetchServices = async (req, res) => {
 
 // createService - post
 
-// const createService = async (req, res) => {
-//     const Service = 
-// } 
+const createService = async (req, res) => {
+    const service = new Service({
+        service: req.body.id,
+        price: req.body.price,
+        status: req.body.status,
+        date: req.body.time
+    })
+} 
 
 // getService
 
@@ -52,7 +51,6 @@ const createBaseService = async (req, res) => {
     })
     await baseService.save((err, data) => {
         if (err) {
-            console.log(err)
             res.send({
                 success: false,
                 error: err
@@ -105,8 +103,9 @@ const fetchBaseService = async (req, res) => {
 
 // PUT BaseService
 
-
-// Cats
+// 
+// Categories
+// 
 
 // post
 const createCategory = async (req, res) => {

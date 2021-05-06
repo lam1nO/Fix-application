@@ -103,14 +103,20 @@
   <section class="services-section mt-10">
     <div class="main_container flex flex-col">
       <h2 class="text-gray-600 text-left">Услуги клиники</h2>
-      <BlurCard :blur="'100'" :opacity="'20'" :bg="'bg-blurWhite-f3'" :styles="['py-10 w-full rounded-md flex justify-center mt-5']">
-        <ServiceSlider class="w-full"/>
+      <BlurCard
+        :blur="'100'"
+        :opacity="'20'"
+        :bg="'bg-blurWhite-f3'"
+        :styles="['py-10 w-full rounded-md flex justify-center mt-5']"
+      >
+        <ServiceSlider class="w-full" />
       </BlurCard>
     </div>
   </section>
   <section class="services-section mt-10">
     <div class="main_container">
       <h2 class="text-gray-600 text-left">Почему это удобно?</h2>
+      <why-container />
     </div>
   </section>
 </template>
@@ -119,6 +125,7 @@
 import Step from "@/components/Main/Step.vue";
 import DoctorCard from "@/components/Main/DoctorCard.vue";
 import ServiceSlider from "@/components/Main/Services/ServiceSlider.vue";
+import WhyContainer from "@/components/Main/Why/WhyContainer.vue";
 
 // @ is an alias to /src
 export default {
@@ -126,12 +133,11 @@ export default {
   components: {
     Step,
     DoctorCard,
-    ServiceSlider
+    ServiceSlider,
+    WhyContainer,
   },
   data() {
-    return {
-      
-    }
-  }
+    return {};
+  },
 };
 </script>

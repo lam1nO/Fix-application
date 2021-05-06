@@ -5,7 +5,6 @@ export default {
     return api().get("posts");
   },
   fetchCategories() {
-    return api().get('categories');
-  }
+    return api().get("categories");
+  },
 };
-  
