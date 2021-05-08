@@ -14,7 +14,7 @@
   }
 
   h1 {
-    font-size: 4rem;
+    @apply text-4xl;
   }
 
   h2 {
@@ -203,4 +203,60 @@ header {
   left: 50%;
   top: 0;
   transform: translateX(-50%);
+}
+
+/* ADMIN NAV */
+
+
+
+aside { 
+  width: 150px;
+  @apply flex-shrink-0;
+
+  nav {
+    @apply w-full;
+   
+    .nav_link {
+      @apply font-semibold flex flex-col items-center w-full px-5;
+      transition: color 0.3s;
+
+      
+
+      .icon {
+        @apply w-7 h-7;
+        background-position: center;
+        background-size: contain;
+        transition: background 0.3s;
+      }
+
+      &.service .icon {
+        background-image: url("/images/nav/service_default.svg");
+      }
+      
+      &.service:hover .icon, &.router-link-active.service .icon {
+        background-image: url('/images/nav/service_hover.svg');
+      }
+
+      &.category .icon {
+        background-image: url("/images/nav/category_default.svg");
+      }
+
+      &.category:hover .icon, &.router-link-active.category .icon {
+        background-image: url('/images/nav/category_hover.svg');
+      }
+
+      &.user .icon {
+        background-image: url("/images/nav/user_default.svg");
+      }
+
+      &.user:hover .icon, &.router-link-active.user .icon {
+        background-image: url('/images/nav/user_hover.svg');
+      }
+
+      &:hover, &.router-link-active {
+        @apply text-lightBlue-600;
+      }
+
+    }
+  }
 }

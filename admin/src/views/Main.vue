@@ -1,7 +1,7 @@
 <template>
   <div>
     <form @submit.prevent="createService">
-      <label>Выбери категорию</label>
+      <!-- <label>Выбери категорию</label>
       <select v-model="event.category">
         <option v-for="cat in categories" :key="cat">{{ cat }}</option>
       </select>
@@ -23,7 +23,7 @@
         <input v-model="event.location" type="text" placeholder="Цена"/>
       </div>
 
-      <input type="submit" class="button -fill-gradient" value="Submit"/>
+      <input type="submit" class="button -fill-gradient" value="Submit"/> -->
     </form>
   </div>
 </template>
@@ -34,12 +34,11 @@ export default {
   components: {
   },
   data() {
-    
+    return {
+
+    }
   },
   methods: {
-    createService() {
-      
-    }
   }
 }
 </script>

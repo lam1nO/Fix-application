@@ -1,18 +1,21 @@
 <template>
-
-  <content class="w-full flex-auto z-10">
+  <Aside class="py-10"></Aside>
+  <main class="w-full py-10 px-8 flex-auto flex flex-col items-start">
     <router-view />
-  </content>
+  </main>
 
 </template>
 
 <script>
+import Aside from './components/Main/Aside.vue';
+
 
 export default {
   name: "App",
   components: {
-    
+    Aside,
   },
+  
 };
 </script>
 
