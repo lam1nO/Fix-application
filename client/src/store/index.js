@@ -16,7 +16,7 @@ export default createStore({
       return apiService
         .fetchCategories()
         .then((response) => {
-          commit("UPDATE_CAT", response.data);
+          commit("UPDATE_CAT", response.data["categories"]);
         })
         .catch((error) => {
           throw error;

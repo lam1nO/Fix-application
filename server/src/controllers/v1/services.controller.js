@@ -92,7 +92,8 @@ const fetchBaseService = async (req, res) => {
                 success: false,
                 err
             })
-        } {
+        } 
+        else {
             res.send({
                 success: true,
                 base_services: data

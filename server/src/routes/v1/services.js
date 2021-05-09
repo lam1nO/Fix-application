@@ -1,5 +1,4 @@
 import {Router} from 'express'
-import {Service, BaseService, Category} from '@models/Service'
 import serviceController  from '@controllers/v1/services.controller'
 import servicesController from '../../controllers/v1/services.controller'
 
@@ -14,7 +13,6 @@ serviceRouter.get('/services', serviceController.fetchServices)
 serviceRouter.post('/base_service', servicesController.createBaseService)
 serviceRouter.get('/base_service/:id', serviceController.getBaseService)
 serviceRouter.get('/base_service', servicesController.fetchBaseService)
-
 
 // CATS
 serviceRouter.post('/category', serviceController.createCategory)

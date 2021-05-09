@@ -15,9 +15,9 @@
     </div>
   </Header>
 
-  <content class="w-full flex-auto z-10">
+  <main class="w-full flex-auto z-10">
     <router-view />
-  </content>
+  </main>
 
   <Footer></Footer>
 </template>
