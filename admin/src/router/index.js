@@ -21,17 +21,19 @@ const routes = [
     path: "/categories",
     name: "categoriesHome",
     component: CategoriesHome,
+    children: [
+      {
+        path: "add",
+        component: CategoriesAdd,
+        name: "categoriesAdd"
+      }
+    ]
   },
   {
     path: "/users",
     name: "usersHome",
     component: UsersHome,
   },
-  {
-    path: '/categories/add',
-    component: CategoriesAdd,
-    name: "categoriesAdd"
-  }
 ];
 
 const router = createRouter({
