@@ -1,5 +1,5 @@
 <template>
-  <div :class="['def_card', bg, styles]">
+  <div :class="['def_card', bg, styles, 'shadow-lg']">
     <slot></slot>
   </div>
 </template>

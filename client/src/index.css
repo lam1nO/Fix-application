@@ -157,6 +157,52 @@ header {
   }
 }
 
+/* DECOR */
+
+
+.hero_decor_container {
+  position: relative;
+
+  .card_doctor {
+    width: 290px;
+    height: 130px;
+    bottom: -15px; 
+    left: -40px;
+    @apply p-3 flex rounded-md justify-between absolute z-10;
+
+    h4 {
+      @apply leading-none;
+    }
+
+    .btn {
+      @apply text-lightBlue-500 bg-lightBlue-200;
+    }
+
+    .img_pseudo {
+      width: 60px;
+      height: 60px;
+      @apply rounded-full bg-gray-100;
+    }
+  }
+
+  .screen_decor {
+    width: 320px;
+    height: 520px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @apply absolute bg-opacity-20 rounded-md p-5 z-0;
+  }
+
+  .numbers_decor {
+    width: 374px;
+    height: 140px;
+    @apply absolute z-10 right-0 top-1/2;
+    transform: translate(50%, -50%);
+  }
+
+}
+
 /* STEP */
 .step {
   width: 200px;
@@ -164,6 +210,7 @@ header {
 }
 
 /* SERVICE CARD */
+
 .addservice {
   font-style: normal;
   font-weight: bold;
@@ -179,7 +226,7 @@ header {
 }
 
 .service-slide {
-  width: 190px;
+  width: 180px;
 }
 
 .category-container {
@@ -220,12 +267,16 @@ header {
 /* SPLIDER */
 
 .splide__arrow--prev {
-  left: -80px;
+  left: -70px;
 }
 
 
 .splide__pagination {
   display: none;
+}
+
+.splide__slide {
+  width: 180px;
 }
 
 .splide__arrow {
@@ -246,7 +297,7 @@ header {
 }
 
 .splide__arrow--next {
-  right: -80px;
+  right: -70px;
 }
 
 /* WHY MAIN */
