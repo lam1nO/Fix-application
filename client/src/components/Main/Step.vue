@@ -1,5 +1,5 @@
 <template>
-  <div
+  <card
     class="step inline-flex flex-col rounded-2xl px-5 items-center relative pt-9 pb-5"
   >
     <div
@@ -15,7 +15,7 @@
         {{ desc }}
       </p>
     </div>
-  </div>
+  </card>
 </template>
 
 <script>

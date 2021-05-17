@@ -18,21 +18,17 @@
       >
     </div>
     <div class="hero_decor_container relative flex-auto ml-5">
-      <blur-card
+      <card
         :styles="['p-2.5', 'rounded-lg', 'absolute', 'top-4']"
-        :opacity="'50'"
         :bg="'bg-white'"
-        :blur="'40'"
         ><cat-icon :iconName="'UZI'"></cat-icon
-      ></blur-card>
+      ></card>
 
-      <blur-card
+      <card
         :styles="['p-2.5', 'rounded-lg', 'absolute', 'bottom-4', 'right-10']"
-        :opacity="'50'"
         :bg="'bg-white'"
-        :blur="'40'"
         ><cat-icon :iconName="'Cardio'"></cat-icon
-      ></blur-card>
+      ></card>
     </div>
   </section>
   <section class="howworks w-full mt-6 z-10">
@@ -104,9 +100,9 @@
     <div class="main_container flex flex-col">
       <h2 class="text-gray-600 text-left">Услуги клиники</h2>
       <BlurCard
-        :blur="'100'"
         :opacity="'20'"
-        :bg="'bg-blurWhite-f3'"
+        :blur="'0'"
+        :bg="'bg-txt-white'"
         :styles="['py-10 w-full rounded-md flex justify-center mt-5']"
       >
         <ServiceSlider class="w-full" />

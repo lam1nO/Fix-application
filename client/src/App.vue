@@ -1,10 +1,10 @@
 <template>
-  <div class="bg z-0"></div>
+  <!-- <div class="bg z-0"></div>
   <div class="bg_elements fixed main_container min-h-full h-full z-0">
     <div class="bg_element_circle1 right-20 top-40 absolute circle">
       <img :src="require('@/assets/bg_ellipse.svg')" alt="" />
     </div>
-  </div>
+  </div> -->
 
   <Header class="">
     <div id="nav" class="flex">
