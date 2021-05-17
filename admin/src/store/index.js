@@ -8,11 +8,14 @@ import apiService from "@/services/apiService";
 
 export default createStore({
   state: {
-    categories: []
+    categories: [],
+    message: '',
+    response: {}
   },
   mutations: {
-    FETCH_CATS(state, categories) {
+    FETCH_CATS(state, categories, res) {
       state.categories = categories;
+      state.response = res;
     }
   },
   actions: {
@@ -20,10 +23,10 @@ export default createStore({
       return apiService
         .fetchCategories()
         .then(response => {
-          commit('FETCH_CATS', response.data["categories"]);
+          commit('FETCH_CATS', response.data["categories"], response.data);
         })
         .catch(err => {
-          throw err;
+          this.message = err.message;
         })
     },
 

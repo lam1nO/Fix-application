@@ -1,5 +1,5 @@
 <template>
-    <h1 class="mt-5">Добавить категорию</h1>
+    <h3 class="mt-5">Добавить категорию</h3>
     <form action="" @submit.prevent="addCategory">
         <label>Название категории</label>
         <input

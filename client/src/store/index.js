@@ -24,7 +24,7 @@ export default createStore({
     },
   },
   getters: {
-    cats(state) {
+    getCats(state) {
       return state.categories;
     },
   },
