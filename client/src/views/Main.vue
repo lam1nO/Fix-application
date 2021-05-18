@@ -23,7 +23,25 @@
         :bg="'bg-white'"
         ><cat-icon :iconName="'UZI'"></cat-icon
       ></card>
+      <card class="card_doctor ">
+        <div class="doctor-info flex flex-col items-start">
+          <h4 class="mb-1 text-warm-600 font-bold">Гусманов Нияз</h4>
+          <p class="text-warm-400 text-sm">Узист, кардиолог</p>
+          <Button class="mt-auto" :size="'btn_xs'" :caption="false">Расписание</Button>
+        </div>
+        <div class="img_pseudo">
 
+        </div>
+      </card>
+      <blur-card class="screen_decor" blur="'0'" >
+        <blur-card class="bg-opacity-40 rounded-md w-full px-2.5 py-4" blur="'0'">
+          <img :src="require('@/assets/decor/search_bar.png')" class="w-full mb-2" alt="">
+          <img :src="require('@/assets/decor/service_img.png')" class="w-full" alt="">
+        </blur-card>
+      </blur-card>
+      <card class="numbers_decor bg-opacity-0 rounded-md">
+        <img :src="require('@/assets/decor/numbers.svg')" alt="" >
+      </card>
       <card
         :styles="['p-2.5', 'rounded-lg', 'absolute', 'bottom-4', 'right-10']"
         :bg="'bg-white'"
@@ -111,7 +129,7 @@
   </section>
   <section class="services-section mt-10">
     <div class="main_container">
-      <h2 class="text-gray-600 text-left">Почему это удобно?</h2>
+      <h2 class="text-gray-600 text-left mb-5">Почему это удобно?</h2>
       <why-container />
     </div>
   </section>

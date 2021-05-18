@@ -23,7 +23,7 @@ export default {
       type: Boolean,
       default: true,
     },
-    size: String, //sm, lg
+    size: String, //sm, lg, xs
   },
   methods: {
     func() {
