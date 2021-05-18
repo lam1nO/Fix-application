@@ -126,6 +126,32 @@ const createCategory = async (req, res) => {
     })
 }
 
+// delete
+const deleteCategory = async (req, res) => {
+    // await Category.find({id: req}, (err, cat) => {
+    //     if (err) {
+    //         res.send({
+    //             success: false
+    //         })
+    //     } else {
+    //         //removing
+    //         res.send({
+    //             success: true,
+    //             cat: req
+    //         })
+    //     }
+    // })
+
+    // console.log('haha')
+    // console.log(req.body.id)
+    let cat = await Category.find({_id: req.body.id})
+    await Category.deleteOne({_id: req.body.id})
+    res.send({
+        success: true,
+        cat: cat
+    })
+}
+
 // get
 const getCategories = async (req, res) => {
     await Category.find({}, (err, cats) => {
@@ -139,6 +165,8 @@ const getCategories = async (req, res) => {
     })
 }
 
+
+
 // getCategory
 // editCategory
 
@@ -146,7 +174,9 @@ export default {
     createCategory,
     getCategories,
     fetchServices,
+    createService,
     createBaseService,
     getBaseService,
-    fetchBaseService
+    fetchBaseService,
+    deleteCategory,
 }

@@ -16,6 +16,19 @@ export default createStore({
     FETCH_CATS(state, categories, res) {
       state.categories = categories;
       state.response = res;
+    },
+    ADD_CAT(state, cat) {
+      state.categories.push(cat)
+      
+    },
+    REMOVE_CAT(state, cat) {
+      let cats = []
+      state.categories.forEach(el => {
+        if (el._id !== cat[0]._id){
+          cats.push(el)
+        }
+      })
+      state.categories = cats
     }
   },
   actions: {
@@ -29,6 +42,22 @@ export default createStore({
           this.message = err.message;
         })
     },
+    addCategory({commit}, cat) {
+      apiService.postCat(cat).then(() => {
+        commit('ADD_CAT', cat)
+      }).catch(err => {
+        this.message = err.message;
+      })
+
+    },
+    deleteCategory({commit}, id) {
+      apiService.removeCat(id)
+      .then(res => {
+        commit('REMOVE_CAT', res.data.cat)
+
+      })
+      .catch(err => console.log(err));
+    }
 
   },
   getters: {

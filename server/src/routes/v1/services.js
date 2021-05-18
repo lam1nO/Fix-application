@@ -8,6 +8,7 @@ const serviceRouter = new Router()
 
 // SERVICES
 serviceRouter.get('/services', serviceController.fetchServices)
+serviceRouter.post('/services', serviceController.createService)
 
 // BaseServices
 serviceRouter.post('/base_service', servicesController.createBaseService)
@@ -17,5 +18,7 @@ serviceRouter.get('/base_service', servicesController.fetchBaseService)
 // CATS
 serviceRouter.post('/category', serviceController.createCategory)
 serviceRouter.get('/categories', serviceController.getCategories)
+serviceRouter.delete('/categories', serviceController.deleteCategory)
+
 
 export default serviceRouter

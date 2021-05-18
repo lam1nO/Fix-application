@@ -22,30 +22,33 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                category: {}
+export default {
+    data() {
+        return {
+            category: {}
+        }
+    },
+    created() {
+        this.createEmptyCategory();
+    },
+    methods: {
+        addCategory() {
+            this.$store.dispatch('addCategory', this.category)
+            console.log(this.category)
+            this.createEmptyCategory()
+
+        },
+        createEmptyCategory() {
+            this.category = {
+                name: '',
+                slug: ''
             }
         },
-        created() {
-            this.createEmptyCategory();
-        },
-        methods: {
-            addCategory() {
-                console.log(this.category)
-            },
-            createEmptyCategory() {
-                this.category = {
-                    name: '',
-                    slug: ''
-                }
-            },
-            slugChange() {
-                this.category.slug = this.category.name;
-            }
+        slugChange() {
+            this.category.slug = this.category.name;
         }
     }
+}
 </script>
 
 <style scoped>
