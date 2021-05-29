@@ -1,10 +1,67 @@
 <template>
-    <h1>Услуги</h1>
+    <section class="w-full mt-10">
+        <div class="tools flex justify-between mb-5">
+            <div class="tools_block flex h-full items-center">
+                <input type="search" name="services_search" id="ser_search" class="rounded-md w-60 h-8 px-2">
+            </div>
+            <Button color="btn_green" tot="/services/add" :caption="false" size="btn_sm" class="ml-auto">Добавить</Button>
+        </div>
+
+        <div class="w-full py-3 flex justify-center" v-if="!services.length">
+            Пока услуг нет
+        </div>
+        <div v-else>
+            <table class="categories_table w-full bg-txt-white rounded-md shadow-md">
+                <tr>
+                    <th>Имя</th>
+                    <th>Описание</th>
+                    <th>Цена</th>
+                    <th>Категория</th>
+                    <th>Действия</th>
+                </tr>
+                <tr v-for="ser in services" :key="ser.title">
+                    <td>{{ser.title}}</td>
+                    <td>{{ser.description}}</td>
+                    <td>{{ser.price}}</td>
+                    <td v-if="cat_name_error(ser.category)">{{ser.category.name}}</td>
+                    <td v-else>Ошибка с категорией</td>
+                    <td>Смотреть</td>
+                </tr>
+            </table>
+        </div>
+
+    </section>
 </template>
 
 <script>
     export default {
-        
+        data() {
+            return {
+
+            }
+        },
+        created() {
+            this.$store.dispatch('fetchBaseServices')
+            this.$store.dispatch('fetchCategories')
+        },
+        computed: {
+            categories() {
+                return this.$store.state.categories
+            },
+            services() {
+                return this.$store.state.services
+            },
+            
+        },
+        methods: {
+            cat_name_error(cat){
+                // return Object.prototype.hasOwnProperty.call(cat, 'name')
+                let type = typeof cat
+                console.log(type)
+                return type.toString == 'object' ? true : true
+            }
+        },
+
     }
 </script>
 

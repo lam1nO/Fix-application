@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="tot" class="inline-block cursor-pointer mr-2">
+    <router-link :id="tot" :to="tot" class="inline-block cursor-pointer mr-2">
         <img src="/images/edit.svg" alt="Изменить">
     </router-link>
 </template>

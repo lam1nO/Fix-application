@@ -43,11 +43,15 @@ const createService = async (req, res) => {
 
 // POST BaseService
 const createBaseService = async (req, res) => {
+    // console.log(req.body)
+    let cat_name = req.body.category_name
+    let cat = await Category.find({name: cat_name})
+    cat = cat[0]
     const baseService = new BaseService({
         title: req.body.title,
         description: req.body.description,
-        popular: req.body.popular,
-        category: req.body.category
+        price: req.body.price,
+        category: cat
     })
     await baseService.save((err, data) => {
         if (err) {
@@ -58,11 +62,12 @@ const createBaseService = async (req, res) => {
         } else {
             res.send({
                 success: true,
-                data
+                base_service: data
             })
         }
     })
 }
+
 
 // GET BaseService : id
 const getBaseService = async (req, res) => {
@@ -82,24 +87,43 @@ const getBaseService = async (req, res) => {
 
 }
 
+
+
 // GET fetch BaseService
 const fetchBaseService = async (req, res) => {
     const filter = {category : req.query.category || 0}
-    console.log(filter)
-    await BaseService.find(filter, (err, data) => {
-        if (err) {
-            res.send({
-                success: false,
-                err
-            })
-        } 
-        else {
-            res.send({
-                success: true,
-                base_services: data
-            })
-        }
-    }).populate('category')
+    // console.log('start')
+    // console.log(filter)
+    if (filter.category != 0){
+        await BaseService.find(filter, (err, data) => {
+            if (err) {
+                res.send({
+                    success: false,
+                    err
+                })
+            } 
+            else {
+                res.send({
+                    success: true,
+                    services: data
+                })
+            }
+        }).populate('category')
+    }
+    else {
+        await BaseService.find({}, (err, data) => {
+            if (err) {
+                res.send({
+                    success: false
+                })
+            } else {
+                res.send({
+                    success: true,
+                    services: data
+                })
+            }
+        }).populate('category')
+    }
 }
 
 // PUT BaseService
@@ -128,22 +152,6 @@ const createCategory = async (req, res) => {
 
 // delete
 const deleteCategory = async (req, res) => {
-    // await Category.find({id: req}, (err, cat) => {
-    //     if (err) {
-    //         res.send({
-    //             success: false
-    //         })
-    //     } else {
-    //         //removing
-    //         res.send({
-    //             success: true,
-    //             cat: req
-    //         })
-    //     }
-    // })
-
-    // console.log('haha')
-    // console.log(req.body.id)
     let cat = await Category.find({_id: req.body.id})
     await Category.deleteOne({_id: req.body.id})
     res.send({
@@ -167,6 +175,7 @@ const getCategories = async (req, res) => {
 
 
 
+
 // getCategory
 // editCategory
 
@@ -178,5 +187,5 @@ export default {
     createBaseService,
     getBaseService,
     fetchBaseService,
-    deleteCategory,
+    deleteCategory
 }

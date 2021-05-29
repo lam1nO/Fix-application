@@ -20,8 +20,8 @@
             <tr v-for="cat in categories" :key="cat.slug">
                 <td>{{cat.name}}</td>
                 <td>{{cat.slug}}</td>
-                <td>0</td>
-                <td><EditButton :tot="'/categories/' + cat._id + '/edit'" />  <DeleteButton :id="cat._id" /></td>
+                <td>{{cat.services.length}}</td>
+                <td><EditButton :tot="'/categories/edit/' + cat._id" :cat="cat"/>  <DeleteButton :id="cat._id" /></td>
             </tr>
         </table>
 
@@ -37,9 +37,14 @@ export default {
     },
     created() {
         this.$store.dispatch("fetchCategories");
+        console.log('1')
+        console.log(this.$store.state.categories)
+
     },
     computed: {
         categories() {
+            console.log('2')
+            console.log(this.$store.state.categories)
             return this.$store.state.categories;
         }
     }

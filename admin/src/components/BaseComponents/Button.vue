@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     func() {
-      console.log(this.color);
+      console.log(this.tot);
     },
   },
 };

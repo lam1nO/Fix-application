@@ -7,8 +7,14 @@ export default {
   fetchCategories() {
     return api().get("categories");
   },
+  fetchBaseServices() {
+    return api().get("base_service");
+  },
   postCat(req) {
-    api().post('category', req)
+    return api().post('category', req)
+  },
+  postBaseService(req) {
+    return api().post('base_service', req)
   },
   removeCat(cat_id) {
     console.log(cat_id);

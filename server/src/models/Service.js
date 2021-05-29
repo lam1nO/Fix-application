@@ -3,7 +3,6 @@ const {Schema} = mongoose
 
 const ServiceSchema = new Schema({
     service: {type: Schema.Types.ObjectId, ref: 'BaseService', required: true},
-    price: Number,
     status: String,
     date: { type: Date }
 })
