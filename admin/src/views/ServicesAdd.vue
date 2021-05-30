@@ -1,6 +1,6 @@
 <template>
     <h3 class="mt-5">Добавить услугу</h3>
-    <form action="" @submit.prevent="addService">
+    <form action="" @submit.prevent="addService" class="flex flex-col items-start">
         <label>Название услуги</label>
         <input
             v-model="service.title"
@@ -8,7 +8,7 @@
             placeholder="Название"
             class="field"
         >
-        <br>
+        
         <label>Описание</label>
         <input
             v-model="service.description"
@@ -16,15 +16,15 @@
             placeholder="Описание"
             class="field"
         >
-        <br>
+        
         <label>Цена</label>
         <input
             v-model="service.price"
             type="number"
-            placeholder="Цена"
+            placeholder="Цена" min="0" step="50"
             class="field"
         >
-        <br>
+        
         <label>Категория</label>
         <input
             v-model="service.category_name"
@@ -32,7 +32,15 @@
             placeholder="Имя категории"
             class="field"
         >
-        <br>
+        <label>Ссылка</label>
+        <input
+            v-model="service.link"
+            type="text"
+            placeholder="Ссылка на категорию"
+            class="field"
+        >
+
+        
         <button type="submit" class="btn btn_green btn_sm mt-4">Добавить</button>
     </form>
 </template>
@@ -82,8 +90,4 @@ export default {
 </script>
 
 <style scoped>
-input {
-    margin-top: 15px;
-    margin-left: 15px;
-}
 </style>

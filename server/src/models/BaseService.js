@@ -6,6 +6,7 @@ const BaseServiceSchema = new Schema({
     description: { type: String, default: "" },
     price: Number,
     // popular: { type: Boolean, default: false},
+    link: String,
     category: {type: Schema.Types.ObjectId, ref: 'Category', required: true}
 })
 

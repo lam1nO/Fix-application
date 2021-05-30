@@ -9,6 +9,13 @@
             class="field"
             @change="slugChange"
         >
+        <label>Описание категеории</label>
+        <input
+            type="text"
+            placeholder="Описание"
+            class="field"
+            v-model="category.description"
+        >
         <label>Ярлык категеории</label>
         <input
             type="text"

@@ -51,7 +51,8 @@ const createBaseService = async (req, res) => {
         title: req.body.title,
         description: req.body.description,
         price: req.body.price,
-        category: cat
+        category: cat,
+        link: req.body.link
     })
     await baseService.save((err, data) => {
         if (err) {
@@ -92,8 +93,6 @@ const getBaseService = async (req, res) => {
 // GET fetch BaseService
 const fetchBaseService = async (req, res) => {
     const filter = {category : req.query.category || 0}
-    // console.log('start')
-    // console.log(filter)
     if (filter.category != 0){
         await BaseService.find(filter, (err, data) => {
             if (err) {
@@ -136,7 +135,7 @@ const fetchBaseService = async (req, res) => {
 const createCategory = async (req, res) => {
     let slug = helpers.createSlug(req.body.name)
     const category = new Category({
-        name: req.body.name, slug
+        name: req.body.name, slug, description: req.body.description
     })
     await category.save((err, data) => {
         if (err) {
