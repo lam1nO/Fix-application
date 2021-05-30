@@ -270,3 +270,11 @@ aside {
   }
 
 }
+
+input {
+  @apply w-64 h-10 px-2 rounded-lg mb-4;
+}
+
+label {
+  @apply text-lg mb-2; 
+}

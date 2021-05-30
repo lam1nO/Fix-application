@@ -5,5 +5,5 @@ module.exports = {
     port: 8090,
     host: "localhost",
     dbURL: process.env.REMOTE_TEST,
-    dbOptions: {useNewUrlParser: true, useUnifiedTopology: true}
+    dbOptions: {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}
 }

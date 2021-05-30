@@ -19,6 +19,8 @@ serviceRouter.get('/base_service', servicesController.fetchBaseService)
 serviceRouter.post('/category', serviceController.createCategory)
 serviceRouter.get('/categories', serviceController.getCategories)
 serviceRouter.delete('/categories', serviceController.deleteCategory)
+serviceRouter.get('/category/:id', servicesController.getCategory)
+serviceRouter.put('/category', servicesController.updateCategory)
 
 
 export default serviceRouter

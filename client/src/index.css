@@ -243,6 +243,12 @@ header {
   }
 }
 
+/* APPLY */
+
+.apply_block {
+  width: 640px;
+}
+
 /* CAT ICONS */
 
 .addCard {

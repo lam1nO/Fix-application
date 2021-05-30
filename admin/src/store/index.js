@@ -11,7 +11,8 @@ export default createStore({
     categories: [],
     message: '',
     response: {},
-    services: {}
+    services: {},
+    currentCategory: {}
   },
   mutations: {
     FETCH_CATS(state, categories, res) {
@@ -38,6 +39,13 @@ export default createStore({
         }
       })
       state.categories = cats
+    },
+    GET_CATEGORY(state, cat) {
+      console.log(cat);
+      state.currentCategory = cat;
+    },
+    UPDATE_CATEGORY(state, cat) {
+      console.log(cat);
     }
   },
   actions: {
@@ -80,9 +88,24 @@ export default createStore({
       apiService.removeCat(id)
       .then(res => {
         commit('REMOVE_CAT', res.data.cat)
-
       })
       .catch(err => console.log(err));
+    },
+    getCategory({commit}, id) {
+      apiService.getCategory(id)
+      .then(res => {
+        commit('GET_CATEGORY', res.data.category)
+      })
+      .catch(err => console.log(err))
+    },
+    updateCategory({commit}, document) {
+      apiService.updateCategory(document)
+      .then(res => {
+        commit('UPDATE_CATEGORY', res.data.category)
+      })
+      .catch(err => {
+        console.log(err)
+      })
     }
 
   },

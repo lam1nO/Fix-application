@@ -133,6 +133,19 @@
       <why-container />
     </div>
   </section>
+  <section id="apply" class="mb-8">
+    <div class="main_container">
+      <h2 class="mb-5">Остались вопросы?</h2>
+      <div class="apply_container w-full flex">
+        <p class="text-lg font-semibold mr-16">
+          Оставьте ваши контактные данные - <br> мы свяжемся с вами в ближайшее время!
+        </p>
+        <card class="apply_block rounded-md p-6">
+          <input type="">
+        </card>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>

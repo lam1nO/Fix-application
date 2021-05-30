@@ -173,6 +173,34 @@ const getCategories = async (req, res) => {
     })
 }
 
+const updateCategory = async (req, res) => {
+    console.log(req.body);
+    req.body.slug = helpers.createSlug(req.body.name)
+    await Category.findOneAndUpdate({ _id: req.body._id }, req.body, (err, doc) => {
+        if (err) {
+            res.send({
+                success: false
+            })
+        } else {
+            res.send({
+                category: doc
+            })
+        }
+    });
+}
+
+// GET category
+
+const getCategory = async (req, res) => {
+    let category = await Category.findById(req.params.id, (err, category) => {
+        if (err) {
+            res.send({
+                success: false
+            })
+        } else res.send({category: category, success: true})
+    });
+}
+
 
 
 
@@ -187,5 +215,7 @@ export default {
     createBaseService,
     getBaseService,
     fetchBaseService,
-    deleteCategory
+    deleteCategory,
+    getCategory,
+    updateCategory
 }

@@ -19,5 +19,11 @@ export default {
   removeCat(cat_id) {
     console.log(cat_id);
     return api().delete('categories', { data: {id: cat_id}})
+  },
+  getCategory(cat_id) {
+    return api().get('category/' + cat_id)
+  },
+  updateCategory(document) {
+    return api().put('category', document)
   }
 };
