@@ -37,14 +37,10 @@ export default {
     },
     created() {
         this.$store.dispatch("fetchCategories");
-        console.log('1')
-        console.log(this.$store.state.categories)
 
     },
     computed: {
         categories() {
-            console.log('2')
-            console.log(this.$store.state.categories)
             return this.$store.state.categories;
         }
     }

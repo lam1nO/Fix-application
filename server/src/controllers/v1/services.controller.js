@@ -43,15 +43,12 @@ const createService = async (req, res) => {
 
 // POST BaseService
 const createBaseService = async (req, res) => {
-    // console.log(req.body)
-    let cat_name = req.body.category_name
-    let cat = await Category.find({name: cat_name})
-    cat = cat[0]
     const baseService = new BaseService({
         title: req.body.title,
         description: req.body.description,
         price: req.body.price,
-        category: cat
+        category: req.body.category,
+        link: req.body.link
     })
     await baseService.save((err, data) => {
         if (err) {
@@ -71,7 +68,7 @@ const createBaseService = async (req, res) => {
 
 // GET BaseService : id
 const getBaseService = async (req, res) => {
-    await BaseService.findById(req.params.id, (err, base_service) => {
+    await BaseService.findById(req.params.id, (err, service) => {
         if (err) {
             res.send({
                 success: false,
@@ -80,7 +77,7 @@ const getBaseService = async (req, res) => {
         } else {
             res.send({
                 success: true,
-                base_service
+                service
             })
         }
     }).populate('category')
@@ -92,8 +89,6 @@ const getBaseService = async (req, res) => {
 // GET fetch BaseService
 const fetchBaseService = async (req, res) => {
     const filter = {category : req.query.category || 0}
-    // console.log('start')
-    // console.log(filter)
     if (filter.category != 0){
         await BaseService.find(filter, (err, data) => {
             if (err) {
@@ -128,6 +123,21 @@ const fetchBaseService = async (req, res) => {
 
 // PUT BaseService
 
+const updateBaseService = async (req, res) => {
+    console.log(req.body);
+    await BaseService.findOneAndUpdate({ _id: req.body._id }, req.body, (err, doc) => {
+        if (err) {
+            res.send({
+                success: false
+            })
+        } else {
+            res.send({
+                service: doc
+            })
+        }
+    });
+}
+
 // 
 // Categories
 // 
@@ -136,7 +146,7 @@ const fetchBaseService = async (req, res) => {
 const createCategory = async (req, res) => {
     let slug = helpers.createSlug(req.body.name)
     const category = new Category({
-        name: req.body.name, slug
+        name: req.body.name, slug, description: req.body.description
     })
     await category.save((err, data) => {
         if (err) {
@@ -217,5 +227,6 @@ export default {
     fetchBaseService,
     deleteCategory,
     getCategory,
-    updateCategory
+    updateCategory,
+    updateBaseService
 }

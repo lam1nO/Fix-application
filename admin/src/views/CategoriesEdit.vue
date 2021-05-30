@@ -9,6 +9,13 @@
             class="field"
             @change="slugChange"
         >
+        <label>Описание категеории</label>
+        <input
+            type="text"
+            placeholder="Описание"
+            class="field"
+            v-model="category.description"
+        >
         <label>Ярлык категеории</label>
         <input
             type="text"
@@ -17,11 +24,6 @@
             readonly="true"
             v-model="category.slug"
         >
-        <select>
-            <option v-for="option in category.service" :value="option._id" :key="option._id">
-                {{option.name}}
-            </option>
-        </select>
         <button type="submit" class="btn btn_green btn_sm mt-5">Изменить</button>
     </form>
     </section>

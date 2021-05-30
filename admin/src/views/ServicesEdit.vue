@@ -1,6 +1,6 @@
 <template>
-    <h3 class="mt-5">Добавить услугу</h3>
-    <form action="" @submit.prevent="addService" class="flex flex-col items-start">
+    <h3 class="mt-5">Изменить услугу</h3>
+    <form action="" @submit.prevent="editService" class="flex flex-col items-start">
         <label>Название услуги</label>
         <input
             v-model="service.title"
@@ -39,20 +39,21 @@
 
         
         <label>Категория</label>
-        <select v-model="service.category" required>
+        <select v-if="service.category" v-model="service.category._id" required>
             <option value="" disabled>
                 --Выбрать--
             </option>
             <option 
                 v-for="option in categories" 
                 :value="option._id" 
-                :key="option._id">
+                :key="option._id"
+               >
                 {{option.name}}
             </option>
         </select>
 
         
-        <button type="submit" class="btn btn_green btn_sm mt-4">Добавить</button>
+        <button type="submit" class="btn btn_green btn_sm mt-4">Изменить</button>
     </form>
 </template>
 
@@ -60,57 +61,33 @@
 export default {
     data() {
         return {
-            service: {},
             disabled: false
         }
     },
     created() {
-        this.createEmptyBaseService();
         this.$store.dispatch('fetchCategories')
+        this.$store.dispatch('getBaseService', this.$route.params.id)
     },
     computed: {
         categories() {
             return this.$store.state.categories;
+        },
+        service() {
+            // console.log(this.$store.state.currentService);
+            return this.$store.state.currentService;
         }
     },
     methods: {
-        addService() {
-            for (let prop in this.service) {
-                if (!this.service[prop]) {
-                    console.log(this.service)
-                    return false;
-                }
-            }
-            this.$store.dispatch('addService', this.service)
+        editService() {
+            this.$store.dispatch('updateBaseService', this.service)
             .then(() => {
-                this.createEmptyBaseService()
+                // console.log('Nice')
                 this.$router.push({name: 'servicesHome'});
             })
             .catch(err => {
                 console.log(err)
             })
         },
-        createEmptyBaseService() {
-            this.service = {
-                title: "",
-                price: 0,
-                description: "",
-                category: ""
-            }
-        },
-        // fetchCategoryByName(cat_name) {
-        //     let fetch_cats = this.$store.state.categories
-        //     console.log(fetch_cats)
-        //     fetch_cats.forEach(el => {
-        //         console.log(el.name)
-        //         if (el.name == cat_name){
-        //             this.category = el
-        //             console.log(el)
-        //             console.log(this.category)
-        //             console.log('yes')
-        //         }
-        //     })
-        // },
     }
 }
 </script>

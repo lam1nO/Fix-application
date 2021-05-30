@@ -271,7 +271,7 @@ aside {
 
 }
 
-input {
+input, select {
   @apply w-64 h-10 px-2 rounded-lg mb-4;
 }
 

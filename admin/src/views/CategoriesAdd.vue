@@ -1,6 +1,6 @@
 <template>
     <h3 class="mt-5">Добавить категорию</h3>
-    <form action="" @submit.prevent="addCategory">
+    <form action="" @submit.prevent="addCategory" class="flex flex-col items-start">
         <label>Название категории</label>
         <input
             v-model="category.name"
@@ -9,11 +9,18 @@
             class="field"
             @change="slugChange"
         >
+        <label>Описание категеории</label>
+        <input
+            type="text"
+            placeholder="Описание"
+            class="field"
+            v-model="category.description"
+        >
         <label>Ярлык категеории</label>
         <input
             type="text"
             placeholder="Слаг"
-            class="field"
+            class="field text-gray-400 bg-gray-200 cursor-not-allowed"
             readonly="true"
             v-model="category.slug"
         >
@@ -34,9 +41,8 @@ export default {
     methods: {
         addCategory() {
             this.$store.dispatch('addCategory', this.category)
-            console.log(this.category)
             this.createEmptyCategory()
-
+            this.$route.push({name: 'categoriesHome'})
         },
         createEmptyCategory() {
             this.category = {
