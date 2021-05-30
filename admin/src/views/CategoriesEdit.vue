@@ -40,6 +40,7 @@ export default {
     methods: {
         updateCategory() {
             this.$store.dispatch('updateCategory', this.category)
+            this.$router.push({name: 'categoriesHome'});
         },
         slugChange() {
             this.category.slug = this.category.name;
