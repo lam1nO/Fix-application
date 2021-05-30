@@ -7,6 +7,7 @@
             type="text"
             placeholder="Название"
             class="field"
+            required
         >
         
         <label>Описание</label>
@@ -15,6 +16,7 @@
             type="text"
             placeholder="Описание"
             class="field"
+            required
         >
         
         <label>Цена</label>
@@ -23,22 +25,31 @@
             type="number"
             placeholder="Цена" min="0" step="50"
             class="field"
+            required
         >
         
-        <label>Категория</label>
-        <input
-            v-model="service.category_name"
-            type="text"
-            placeholder="Имя категории"
-            class="field"
-        >
         <label>Ссылка</label>
         <input
             v-model="service.link"
             type="text"
             placeholder="Ссылка на категорию"
             class="field"
+            required
         >
+
+        
+        <label>Категория</label>
+        <select v-model="service.category" required>
+            <option value="" disabled>
+                --Выбрать--
+            </option>
+            <option 
+                v-for="option in categories" 
+                :value="option._id" 
+                :key="option._id">
+                {{option.name}}
+            </option>
+        </select>
 
         
         <button type="submit" class="btn btn_green btn_sm mt-4">Добавить</button>
@@ -50,26 +61,41 @@ export default {
     data() {
         return {
             service: {},
-            category: {}
+            disabled: false
         }
     },
     created() {
         this.createEmptyBaseService();
-        // this.$store.dispatch('fetchCategories')
+        this.$store.dispatch('fetchCategories')
+    },
+    computed: {
+        categories() {
+            return this.$store.state.categories;
+        }
     },
     methods: {
         addService() {
+            for (let prop in this.service) {
+                if (!this.service[prop]) {
+                    console.log(this.service)
+                    return false;
+                }
+            }
             this.$store.dispatch('addService', this.service)
-            this.createEmptyBaseService()
-
+            .then(() => {
+                this.createEmptyBaseService()
+                this.$router.push({name: 'servicesHome'});
+            })
+            .catch(err => {
+                console.log(err)
+            })
         },
         createEmptyBaseService() {
             this.service = {
                 title: "",
                 price: 0,
                 description: "",
-                category_name: "",
-                // category: {}
+                category: ""
             }
         },
         // fetchCategoryByName(cat_name) {

@@ -23,8 +23,7 @@
                     <td>{{ser.title}}</td>
                     <td>{{ser.description}}</td>
                     <td>{{ser.price}}</td>
-                    <td v-if="cat_name_error(ser.category)">{{ser.category.name}}</td>
-                    <td v-else>Ошибка с категорией</td>
+                    <td>{{ser.category.name}}</td>
                     <td>Смотреть</td>
                 </tr>
             </table>
@@ -52,14 +51,6 @@
                 return this.$store.state.services
             },
             
-        },
-        methods: {
-            cat_name_error(cat){
-                // return Object.prototype.hasOwnProperty.call(cat, 'name')
-                let type = typeof cat
-                console.log(type)
-                return type.toString == 'object' ? true : true
-            }
         },
 
     }

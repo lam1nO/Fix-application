@@ -43,15 +43,11 @@ const createService = async (req, res) => {
 
 // POST BaseService
 const createBaseService = async (req, res) => {
-    // console.log(req.body)
-    let cat_name = req.body.category_name
-    let cat = await Category.find({name: cat_name})
-    cat = cat[0]
     const baseService = new BaseService({
         title: req.body.title,
         description: req.body.description,
         price: req.body.price,
-        category: cat,
+        category: req.body.category,
         link: req.body.link
     })
     await baseService.save((err, data) => {

@@ -80,6 +80,7 @@ export default createStore({
     addService({commit}, service) {
       apiService.postBaseService(service).then(() => {
         commit('ADD_SERVICE', service)
+        this.$router.push({name: 'servicesHome'});
       }).catch(err => {
         this.message = err.message
       })
