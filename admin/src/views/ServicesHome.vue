@@ -24,7 +24,7 @@
                     <td>{{ser.description}}</td>
                     <td>{{ser.price}}</td>
                     <td>{{ser.category.name}}</td>
-                    <td>Смотреть</td>
+                    <td><EditButton :tot="'/services/edit/' + ser._id"/>  <DeleteButton :id="ser._id" /></td>
                 </tr>
             </table>
         </div>

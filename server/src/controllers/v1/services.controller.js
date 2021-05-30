@@ -68,7 +68,7 @@ const createBaseService = async (req, res) => {
 
 // GET BaseService : id
 const getBaseService = async (req, res) => {
-    await BaseService.findById(req.params.id, (err, base_service) => {
+    await BaseService.findById(req.params.id, (err, service) => {
         if (err) {
             res.send({
                 success: false,
@@ -77,7 +77,7 @@ const getBaseService = async (req, res) => {
         } else {
             res.send({
                 success: true,
-                base_service
+                service
             })
         }
     }).populate('category')
@@ -122,6 +122,21 @@ const fetchBaseService = async (req, res) => {
 }
 
 // PUT BaseService
+
+const updateBaseService = async (req, res) => {
+    console.log(req.body);
+    await BaseService.findOneAndUpdate({ _id: req.body._id }, req.body, (err, doc) => {
+        if (err) {
+            res.send({
+                success: false
+            })
+        } else {
+            res.send({
+                service: doc
+            })
+        }
+    });
+}
 
 // 
 // Categories
@@ -212,5 +227,6 @@ export default {
     fetchBaseService,
     deleteCategory,
     getCategory,
-    updateCategory
+    updateCategory,
+    updateBaseService
 }

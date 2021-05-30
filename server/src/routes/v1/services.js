@@ -13,7 +13,8 @@ serviceRouter.post('/services', serviceController.createService)
 // BaseServices
 serviceRouter.post('/base_service', servicesController.createBaseService)
 serviceRouter.get('/base_service/:id', serviceController.getBaseService)
-serviceRouter.get('/base_service', servicesController.fetchBaseService)
+serviceRouter.get('/base_services', servicesController.fetchBaseService)
+serviceRouter.put('/base_service', servicesController.updateBaseService)
 
 // CATS
 serviceRouter.post('/category', serviceController.createCategory)

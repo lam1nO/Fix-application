@@ -12,12 +12,16 @@ export default createStore({
     message: '',
     response: {},
     services: {},
-    currentCategory: {}
+    currentCategory: {},
+    currentService: {}
   },
   mutations: {
     FETCH_CATS(state, categories, res) {
       state.categories = categories;
       state.response = res;
+    },
+    GET_BASE_SERVICE(state, service) {
+      state.currentService = service;
     },
     FETCH_SERVS(state, services, res) {
       state.services = services;
@@ -25,12 +29,10 @@ export default createStore({
     },
     ADD_CAT(state, cat) {
       state.categories.push(cat)
-      
     },
     ADD_SERVICE(state, service){
       state.services.push(service)
-    }
-    ,
+    },
     REMOVE_CAT(state, cat) {
       let cats = []
       state.categories.forEach(el => {
@@ -46,6 +48,9 @@ export default createStore({
     },
     UPDATE_CATEGORY(state, cat) {
       console.log(cat);
+    },
+    UPDATE_BASE_SERVICE(state, service) {
+      console.log(service);
     }
   },
   actions: {
@@ -69,6 +74,15 @@ export default createStore({
           this.message = err.message;
         })
     },
+    getBaseService({commit}, service_id) {
+      return apiService.getBaseService(service_id)
+      .then(res => {
+        commit('GET_BASE_SERVICE', res.data.service);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    },
     addCategory({commit}, cat) {
       apiService.postCat(cat).then(() => {
         commit('ADD_CAT', cat)
@@ -80,7 +94,6 @@ export default createStore({
     addService({commit}, service) {
       apiService.postBaseService(service).then(() => {
         commit('ADD_SERVICE', service)
-        this.$router.push({name: 'servicesHome'});
       }).catch(err => {
         this.message = err.message
       })
@@ -107,8 +120,16 @@ export default createStore({
       .catch(err => {
         console.log(err)
       })
+    },
+    updateBaseService({commit}, document)  {
+      apiService.updateBaseService(document)
+      .then(res => {
+        commit('UPDATE_BASE_SERVICE', res.data.service)
+      })
+      .catch(err => {
+        console.log(err)
+      })
     }
-
   },
   getters: {
     categoriesCount: state => {

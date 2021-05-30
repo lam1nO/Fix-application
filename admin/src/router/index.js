@@ -8,6 +8,7 @@ import CategoriesHome from "@/views/CategoriesHome.vue";
 import CategoriesAdd from "@/views/CategoriesAdd.vue";
 import CategoriesEdit from "@/views/CategoriesEdit.vue";
 import UsersHome from "@/views/UsersHome.vue";
+import ServicesEdit from "@/views/ServicesEdit.vue";
 
 
 const routes = [
@@ -30,6 +31,11 @@ const routes = [
         path: '',
         component: ServicesHome,
         name: 'servicesHome'
+      },
+      {
+        path: 'edit/:id',
+        component: ServicesEdit,
+        name: 'servicesEdit'
       }
     ]
   },
